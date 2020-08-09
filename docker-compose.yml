@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: wesgur.github.io
+    build:
+      context: .    
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    
+      
