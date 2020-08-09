@@ -12,5 +12,6 @@ services:
       - "${APP_PORT}:${APP_PORT}"
     environment:
       - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
     
       
