@@ -1,0 +1,375 @@
+.brand {
+    margin: 1rem 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+    line-height: 1;
+    text-decoration: none !important;
+}
+
+.brand a {
+    opacity: 1 !important;
+}
+
+.brand small {
+    display: block;
+    font-size: 85%;
+}
+
+.sidebar {
+    color: #fff;
+    width: 0;
+    height: 100%;
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: column;
+    background: #181818;
+    visibility: hidden;
+}
+
+.navbar {
+    top: 0;
+    color: #181818;
+    width: inherit;
+    z-index: 1000;
+    display: flex;  
+    position: fixed;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.5);
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    flex-direction: row;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.navbar a,
+.sidebar a {
+    opacity: 0.5;
+    border: none !important;
+    transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+}
+
+.navbar a {
+    color: #000;
+}
+
+.sidebar a {
+    color: #fff;
+}
+
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active,
+.navbar a.active {
+    color: #000;
+    opacity: 1;
+}
+
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:active,
+.sidebar a.active {
+    color: #fff;
+    opacity: 1;
+}
+
+.nav {
+    margin: auto;
+    width: 100%;
+}
+
+.sidebar-footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    width: inherit;
+}
+
+.sidebar-footer-item {
+    text-align: center;
+    padding: 0 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.navbar .nav {
+    text-align: center;
+}
+
+.nav-collapse {
+    padding: 0 2rem;
+    flex-basis: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.nav-toggle {
+    margin: 1rem;
+    border: 0;
+    padding: 0;
+    content: '';
+    display: flex;
+    position: relative;
+    min-width: 1.2rem;
+    min-height: 1.2rem;
+    background: rgba(0, 0, 0, 0);
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-toggle span,
+.nav-toggle span:before,
+.nav-toggle span:after {
+    width: 100%;
+    height: 2px;
+    display: block;
+    content: '';
+    position: absolute;
+    background-color: #000;
+}
+
+.nav-toggle span:before {
+    top: -5px;
+    transition: top 0.1s ease;
+}
+
+.nav-toggle span:after {
+    top: 5px;
+    transition: top 0.1s ease;
+}
+
+.nav-toggle.active span{
+    transform: rotate(135deg);
+    transition: transform 0.15s ease;
+    transition-delay: 0.1s;
+}
+
+.nav-toggle.active span:before,
+.nav-toggle.active span:after {
+    top: 0;
+    transform: rotate(90deg);
+    transition: transform 0.15s ease;
+    transition-delay: 0.1s;
+}
+
+.nav-item {
+    display: block;
+    position: relative;
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.nav-icon b {
+    opacity: 0;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 25px;
+    margin: auto;
+    font-size: 14px;
+}
+
+.nav-icon:hover i {
+    opacity: 0;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+}
+
+.nav-icon:hover b {
+    opacity: 1;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+}
+
+.container {
+    color: rgba(0, 0, 0, 0.7);
+    margin: auto;
+    display: block;
+    padding: 0 1rem;
+    max-width: 840px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.double-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-left{
+    flex: 1;
+    padding: 1rem;
+}
+
+.container-right{
+    flex: 1;
+    padding: 1rem;
+}
+
+.container.fluid {
+    max-width: 100%;
+}
+
+.page {
+    padding: 6.5rem 0 5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.social-media {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+}
+
+.social-media > li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.social-media > li:first-child {
+    margin-left: 0;
+}
+
+.social-media > li > a {
+    border: none !important;
+}
+
+.grid {
+    margin: -0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    flex-basis: 100%;
+}
+
+.cell-inner {
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0.5rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-left: 0.5rem solid #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.cell-inner:hover {
+    border-left-width: 1rem;
+}
+
+.cell-heading {
+    font-size: 1.5rem;
+}
+
+.footer {
+    color: rgba(0,0,0,.5);
+    padding: 2rem 0;
+    display: flex;
+    font-size: 85%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer > * {
+    margin-bottom: 1rem;
+}
+
+.copyright {
+
+}
+
+.expanded {
+    display: block;
+}
+
+.collapsed {
+    display: none;
+}
+
+.collapsing {
+    overflow: hidden;
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    opacity: 0;
+    position: fixed;
+    visibility: hidden;
+    transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pdf-viewer {
+    width: 50%;
+}
+
+@media(min-width: 769px) {
+    .sidebar {
+        width: 60px;
+        display: flex;
+        visibility: visible;
+    }
+
+    .sidebar .brand {
+        padding: 0 2rem;
+        font-size: 2rem;
+        margin: 5rem 0 2rem !important;
+    }
+
+    .navbar {
+        display: none;
+        visibility: hidden;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .grid {
+
+    }
+
+    .cell {
+        flex-basis: 50%;
+    }
+}
+
+@media only screen and (max-height: 550px) {
+    .sidebar-footer {
+      display: none;
+      position:absolute;
+    }
+  }
