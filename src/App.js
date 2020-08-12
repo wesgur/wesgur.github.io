@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+
+import { default as Resume } from './Views/Resume';
+
+import { default as Container } from './Components/Container';
+
+import "./Static/css/app.css";
+import "./Static/css/components.css";
+import "./Static/css/index.css";
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+
+import { Navigation } from "./Components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation />
+      <div className="content">
+        <Container>
+          <Switch>
+            <Route path="/resume" component={ Resume } />
+            <Redirect to="/" />
+          </Switch>
+        </Container>
+      </div>
+    </Router>
   );
 }
 
