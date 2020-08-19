@@ -1,7 +1,32 @@
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 
+import { Education, Experience } from '../Components/Resume';
+
+const RESUME_LINK = "https://www.dl.dropboxusercontent.com/s/9d23dsrdtvuyf7b/Resume.pdf";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+const experiences = [
+    {
+        "company": "Bluecat Networks",
+        "position": "Software Development Co-op",
+        "start": "Aug 2018",
+        "end": "Aug 2019"
+    },
+    {
+        "company": "Republic of Korea Army (ROKA)",
+        "position": "Intelligence Operations / Topographic Analyst",
+        "start": "Dec 2015",
+        "end": "Aug 2017"
+    },
+    {
+        "company": "Schoool (English On The Go)",
+        "position": "Software Developer",
+        "start": "Jan 2015",
+        "end": "Nov 2015"
+    }
+]
 
 const Resume = () => {
     const [numPages, setNumPages] = useState(null);
@@ -17,30 +42,13 @@ const Resume = () => {
 
     return (
         <div className="container">
-            <div className="container-item">
+            <div className="container-item">          
                 <h1> Resume Summary </h1>
-                <div>                    
-                    <h2> Education </h2>
-                    <div>
-                        <h3> University of Toronto </h3>
-                        <h4> Honours B.Sc. Computer Science, Specialist </h4>
-                    </div>                    
-                </div>
-                <div>
-                    <h2> Work Experience </h2>
-                    <div>
-                        <h3> Bluecat Networks </h3>
-                        <h4> Software Development Co-op </h4>
-                    </div>
-                    <div>
-                        <h3> Republic of Korea Army (ROKA) </h3>
-                        <h4> Intelligence Operation / Topographic Analyst </h4>
-                    </div>
-                    <div>
-                        <h3> Schoool (English On The Go) </h3>
-                        <h4> Software Developer </h4>                                         
-                    </div>
-                </div>                              
+                
+                <Education> </Education>
+
+                <Experience experiences={experiences}> </Experience> 
+                              
                 <div>
                     <h2> Technical Skills </h2>    
                     <div>
@@ -51,16 +59,18 @@ const Resume = () => {
                         <h3> Familiar Operating Systems </h3>
                         <p> Mac, Linux </p>
                     </div>
-                </div>  
+                </div>                  
             </div>
-            <div className="container-item">
-                <a href="https://www.dl.dropboxusercontent.com/s/9d23dsrdtvuyf7b/Resume.pdf">
+            <div className="container-resume">
+                <a href={RESUME_LINK}>
                     <Document
                         className="resume-viewer"
-                        file="https://www.dl.dropboxusercontent.com/s/9d23dsrdtvuyf7b/Resume.pdf"
+                        file={RESUME_LINK}
                         onLoadSuccess={onDocumentLoadSuccess}
                         onLoadError={onDocumentLoadError}>
-                        <Page pageNumber={pageNumber} />
+                        <Page 
+                            pageNumber={pageNumber} />
+                        
                     </Document>            
                 </a>
             </div>            
