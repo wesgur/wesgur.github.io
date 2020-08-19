@@ -5,6 +5,7 @@
 }
 
 html, body {
+    height:100%;
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -42,4 +43,11 @@ a {
 p {
     margin: 0 0 1rem;
     line-height: 1.7;
+}
+
+/* Scrollable Resume Page */
+@media(min-width: 1180px){
+    html, body {
+        overflow: hidden;
+    }    
 }
