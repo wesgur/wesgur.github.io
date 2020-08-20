@@ -7,8 +7,8 @@ const Experiences = (props) => (
     <div className={classNames(styles.sector)}>
         <h2> Work Experience </h2>
         {
-            props.experiences && props.experiences.map(e => { 
-                return ( <Experience experience={e}> </Experience> )
+            props.experiences && props.experiences.map((e, i) => { 
+                return ( <Experience experience={e} key={i}> </Experience> )
             })
         } 
     </div>
