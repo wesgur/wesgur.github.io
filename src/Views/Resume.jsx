@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import classNames from 'classnames';
 
 import { Education, Experience } from '../Components/Resume';
+
+import styles from '../Components/Container/styles.module.scss';
 
 const RESUME_LINK = "https://www.dl.dropboxusercontent.com/s/9d23dsrdtvuyf7b/Resume.pdf";
 
@@ -28,6 +31,7 @@ const experiences = [
     }
 ]
 
+// TODO: Refactor 
 const Resume = () => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
@@ -41,14 +45,14 @@ const Resume = () => {
     }
 
     return (
-        <div className="container">
-            <div className="container-item">          
+        <div className={classNames(styles["container-items"])}>
+            <div className={classNames(styles["container-item"])}>          
                 <h1> Resume Summary </h1>
                 
                 <Education> </Education>
 
                 <Experience experiences={experiences}> </Experience> 
-                              
+                                
                 <div>
                     <h2> Technical Skills </h2>    
                     <div>
@@ -61,7 +65,7 @@ const Resume = () => {
                     </div>
                 </div>                  
             </div>
-            <div className="container-resume">
+            <div className={classNames(styles["container-resume"])}>
                 <a href={RESUME_LINK}>
                     <Document
                         className="resume-viewer"
@@ -69,12 +73,11 @@ const Resume = () => {
                         onLoadSuccess={onDocumentLoadSuccess}
                         onLoadError={onDocumentLoadError}>
                         <Page 
-                            pageNumber={pageNumber} />
-                        
+                            pageNumber={pageNumber} />                        
                     </Document>            
                 </a>
-            </div>            
-        </div>        
+            </div>      
+        </div>           
     );
 }
 

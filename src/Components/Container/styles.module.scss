@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+.container {
+    position: absolute;
+    color: #fff;
+    width: $container-width;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;    
+    min-width: fit-content;
+    padding: 4em;    
+    box-sizing: border-box;    
+}
+
+.container-item{
+    // margin: auto;
+    flex: 0 0 auto;
+    overflow-y: scroll; 
+    position: relative;
+    width: calc(65% - $sidebar-width);
+    padding: 4em;
+    min-height: fit-content;
+    min-width: fit-content;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.container-items{
+    width: 100%;
+    display: flex;   
+    flex-wrap: wrap;  
+    min-height: fit-content;
+    min-width: fit-content;
+}
+
+.container-resume{
+    position: relative;
+    margin: auto;
+    padding: 3em;        
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    flex: 0 0 auto;		
+    align-items: center;
+    justify-content: center;    
+    min-height: fit-content;
+    min-width: fit-content;
+}
+
+.container.fluid {
+    max-width: 100%;
+}

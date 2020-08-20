@@ -1,0 +1,14 @@
+.item{
+    // margin: auto;
+    flex: 0 0 auto;
+    overflow-y: scroll; 
+    position: relative;
+    width: calc(65% - $sidebar-width);
+    padding: 4em;
+    min-height: fit-content;
+    min-width: fit-content;
+
+    h1 {
+        margin: 0;
+    }
+}

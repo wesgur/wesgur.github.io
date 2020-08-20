@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { default as Brand } from './Brand';
 import { default as Sidebar } from './Sidebar';
 
-const appUrl = `${process.env.PUBLIC_URL}/`;
+import styles from './styles.module.scss';
 
-const Navigation = () => (
+const Navigation = (props) => (
     <Sidebar>        
         <Sidebar.List>
             <Sidebar.Menu exact to='/' label='home' type='Home'/>
@@ -20,6 +19,6 @@ const Navigation = () => (
             <Sidebar.Footer.Item link='mailto:wesgur@gmail.com' label='Mail' type='Mail' />
         </Sidebar.Footer>            
     </Sidebar>
-)
+);
 
 export default Navigation;

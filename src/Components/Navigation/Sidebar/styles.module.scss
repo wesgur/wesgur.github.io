@@ -1,21 +1,4 @@
-.brand {
-    margin: 1rem 0;
-    padding: 0;
-    font-size: 1rem;
-    font-weight: bold;
-    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
-    line-height: 1;
-    text-decoration: none !important;
-}
-
-.brand a {
-    opacity: 1 !important;
-}
-
-.brand small {
-    display: block;
-    font-size: 85%;
-}
+@import '../../../variables.scss';
 
 .sidebar {
     color: #fff;
@@ -27,7 +10,8 @@
     flex-wrap: nowrap;
     align-items: stretch;
     flex-direction: column;
-    background: #181818;
+    // background: #2e2b2b;
+    background: rgba(0, 0, 0, 0.8);    
     visibility: hidden;
 }
 
@@ -86,14 +70,14 @@
     width: 100%;
 }
 
-.sidebar-footer {
+.footer {
     position: fixed;
     bottom: 0;
     padding: 10px;
     width: inherit;
 }
 
-.sidebar-footer-item {
+.footer-item {
     text-align: center;
     padding: 0 0.4rem;
     margin-top: 0.5rem;
@@ -199,181 +183,18 @@
     transition: all 1s ease 0s;
 }
 
-.container {
-    position: absolute;
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;    
-    min-width: fit-content;
-    padding: 0 1rem;
-    box-sizing: border-box;    
-}
-
-.container-item{
-    // margin: auto;
-    flex: 0 0 auto;
-    overflow-y: scroll; 
-    position: relative;
-    width: calc(65% - 60px);
-    height: 100%;
-    padding: 4em;
-    min-height: fit-content;
-    min-width: fit-content;
-
-    h1 {
-        margin: 0;
-    }
-}
-
-.container-resume{
-    position: relative;
-    margin: auto;
-    padding: 3em;        
-    flex: 0 0 auto;		
-    width: calc(100% - 60px);
-    align-items: center;
-    justify-content: center;    
-    min-width: fit-content;
-}
-
-.container.fluid {
-    max-width: 100%;
-}
-
-.page {
-    padding: 6.5rem 0 5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.social-media {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    text-align: center;
-}
-
-.social-media > li {
-    display: inline-block;
-    margin-left: 1rem;
-}
-
-.social-media > li:first-child {
-    margin-left: 0;
-}
-
-.social-media > li > a {
-    border: none !important;
-}
-
-.grid {
-    margin: -0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.cell {
-    flex-basis: 100%;
-}
-
-.cell-inner {
-    color: rgba(0, 0, 0, 0.7);
-    margin: 0.5rem;
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-left: 0.5rem solid #000;
-    transition: all 0.2s ease-in-out;
-}
-
-.cell-inner:hover {
-    border-left-width: 1rem;
-}
-
-.cell-heading {
-    font-size: 1.5rem;
-}
-
-.footer {
-    color: rgba(0,0,0,.5);
-    padding: 2rem 0;
-    display: flex;
-    font-size: 85%;
-    align-items: center;
-    flex-direction: column;
-}
-
-.footer > * {
-    margin-bottom: 1rem;
-}
-
-.copyright {
-
-}
-
-.expanded {
-    display: block;
-}
-
-.collapsed {
-    display: none;
-}
-
-.collapsing {
-    overflow: hidden;
-}
-
-.overlay {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    opacity: 0;
-    position: fixed;
-    visibility: hidden;
-    transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.resume-viewer:hover {
-    -moz-transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -o-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-
-    -webkit-transition: transform 0.25s ease-in-out;
-    -moz-transition:transform 0.25s ease-in-out;
-    -ms-transition:transform 0.25s ease-in-out;
-}
-
-.react-pdf__Page__canvas {
-    margin: auto;
-}
-
 @media(min-width: 769px) {
     .sidebar {
-        width: 60px;
+        width: $sidebar-width;
         display: flex;
         visibility: visible;
     }
 
-    .sidebar .brand {
-        padding: 0 2rem;
-        font-size: 2rem;
-        margin: 5rem 0 2rem !important;
-    }
+    // .sidebar {
+    //     padding: 0 2rem;
+    //     font-size: 2rem;
+    //     margin: 5rem 0 2rem !important;
+    // }
 
     .navbar {
         display: none;
@@ -384,32 +205,11 @@
         flex-direction: row;
         justify-content: space-between;
     }
-
-    .grid {
-
-    }
-
-    .cell {
-        flex-basis: 50%;
-    }
 }
 
 @media only screen and (max-height: 550px) {
-    .sidebar-footer {
+    .footer {
       display: none;
       position:absolute;
     }
   }
-
-  /* Scrollable Resume Page */
-@media(min-width: 1447px){
-    .container-resume{
-        width: 50%;
-        overflow: hidden;
-    }        
-
-    .container-item {
-        width: 50%;
-        overflow: hidden;
-    }
-}

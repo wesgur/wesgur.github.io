@@ -1,0 +1,13 @@
+// Measurements
+
+// Sidebar Properties
+$sidebar-width: 60px;
+$sidebar-height: 100%;
+
+// Container Properties
+$container-width: calc(100% - #{$sidebar-width});
+$container-height: 100%;
+
+
+// Visual
+$border-color: rgba(0, 0, 0, 0.15);
