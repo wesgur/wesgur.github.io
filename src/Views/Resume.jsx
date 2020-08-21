@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
+import React from 'react';
 import classNames from 'classnames';
 
-import { Education, Experience } from '../Components/Resume';
+import { Education, Experience, Viewer } from '../Components/Resume';
 
 import styles from '../Components/Container/styles.module.scss';
 
 const RESUME_LINK = "https://www.dl.dropboxusercontent.com/s/9d23dsrdtvuyf7b/Resume.pdf";
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
 const experiences = [
     {
         "company": "Bluecat Networks",
@@ -33,17 +29,6 @@ const experiences = [
 
 // TODO: Refactor 
 const Resume = () => {
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
-    
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-    }
-
-    function onDocumentLoadError(error) {
-        alert(error);
-    }
-
     return (
         <div className={classNames(styles["container-items"])}>
             <div className={classNames(styles["container-item"])}>          
@@ -65,18 +50,7 @@ const Resume = () => {
                     </div>
                 </div>                  
             </div>
-            <div className={classNames(styles["container-resume"])}>
-                <a href={RESUME_LINK}>
-                    <Document
-                        className="resume-viewer"
-                        file={RESUME_LINK}
-                        onLoadSuccess={onDocumentLoadSuccess}
-                        onLoadError={onDocumentLoadError}>
-                        <Page 
-                            pageNumber={pageNumber} />                        
-                    </Document>            
-                </a>
-            </div>      
+            <Viewer link={RESUME_LINK}> </Viewer>
         </div>           
     );
 }

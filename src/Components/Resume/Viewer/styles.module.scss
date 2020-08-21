@@ -1,0 +1,31 @@
+@import '../../../variables.scss';
+
+.container {
+    // position: relative;
+    margin: auto;
+    padding: 3em;        
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    // flex: 0 0 auto;		
+    align-items: center;
+    justify-content: center;    
+    // min-height: fit-content;
+    // min-width: fit-content;
+}
+
+.viewer:hover {
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+
+    -webkit-transition: transform 0.25s ease-in-out;
+    -moz-transition:transform 0.25s ease-in-out;
+    -ms-transition:transform 0.25s ease-in-out;
+}
+
+.react-pdf__Page__canvas {
+    margin: auto;
+}

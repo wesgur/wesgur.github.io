@@ -17,7 +17,7 @@
     flex: 0 0 auto;
     overflow-y: scroll; 
     position: relative;
-    width: calc(65% - $sidebar-width);
+    width: calc(60% - $sidebar-width);
     padding: 4em;
     min-height: fit-content;
     min-width: fit-content;
@@ -36,18 +36,36 @@
 }
 
 .container-resume{
-    position: relative;
+    // position: relative;
     margin: auto;
     padding: 3em;        
     padding-top: 1.5em;
     padding-bottom: 1.5em;
-    flex: 0 0 auto;		
+    // flex: 0 0 auto;		
     align-items: center;
     justify-content: center;    
-    min-height: fit-content;
-    min-width: fit-content;
+    // min-height: fit-content;
+    // min-width: fit-content;
 }
 
 .container.fluid {
     max-width: 100%;
+}
+
+// TODO: should be moved to resume component
+.resume-viewer:hover {
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+
+    -webkit-transition: transform 0.25s ease-in-out;
+    -moz-transition:transform 0.25s ease-in-out;
+    -ms-transition:transform 0.25s ease-in-out;
+}
+
+.react-pdf__Page__canvas {
+    margin: auto;
 }
