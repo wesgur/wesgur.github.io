@@ -1,9 +1,9 @@
 @import '../../variables.scss';
 
 .container {
-    position: absolute;
+    position: relative;
     color: #fff;
-    width: $container-width;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;    

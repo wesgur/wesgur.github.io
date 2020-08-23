@@ -1,0 +1,52 @@
+img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.item {
+    border-style: solid;
+    border-width: thin;
+    padding: 1em;
+    min-height: max-content;
+    display: flex;
+}
+
+.content {
+    padding: 1.5em;
+    display: flex;
+}
+
+.image-content {
+    margin: auto;
+    align-items: center;    
+}
+
+.timeline-content {
+    align-items: center;
+
+    h2 {
+        width: fit-content;
+        margin: auto;
+    }
+}
+
+.tech-stack {
+    svg {
+        margin-right: 0.5em;
+    }
+}
+
+.left {
+    width: 70%;
+
+    svg {
+        width: 45px;
+        height: auto;
+    }
+}
+
+.right {
+    width: 30%;
+}
+
