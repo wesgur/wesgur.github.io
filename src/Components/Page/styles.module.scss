@@ -3,6 +3,6 @@
 .page {
     // padding: 6.5rem 0 5rem;
     border-bottom: 1px solid $border-color;
-    width: calc(100% - $sidebar-width);
+    width: calc(100% - #{$sidebar-width});
     overflow: auto;
 }

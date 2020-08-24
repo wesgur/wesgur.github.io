@@ -17,7 +17,7 @@
     flex: 0 0 auto;
     overflow-y: scroll; 
     position: relative;
-    width: calc(60% - $sidebar-width);
+    width: calc(60% - #{$sidebar-width});
     padding: 4em;
     min-height: fit-content;
     min-width: fit-content;
