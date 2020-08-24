@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8a62e75f.chunk.css",
+    "main.js": "/static/js/main.de06e91c.chunk.js",
+    "main.js.map": "/static/js/main.de06e91c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d992f18c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d992f18c.js.map",
+    "static/css/2.af0132db.chunk.css": "/static/css/2.af0132db.chunk.css",
+    "static/js/2.5a74e921.chunk.js": "/static/js/2.5a74e921.chunk.js",
+    "static/js/2.5a74e921.chunk.js.map": "/static/js/2.5a74e921.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.06b887adeef526507dfe4cb9e8d891f3.js": "/precache-manifest.06b887adeef526507dfe4cb9e8d891f3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.af0132db.chunk.css.map": "/static/css/2.af0132db.chunk.css.map",
+    "static/css/main.8a62e75f.chunk.css.map": "/static/css/main.8a62e75f.chunk.css.map",
+    "static/js/2.5a74e921.chunk.js.LICENSE.txt": "/static/js/2.5a74e921.chunk.js.LICENSE.txt",
+    "static/media/aws.1946e51b.svg": "/static/media/aws.1946e51b.svg",
+    "static/media/css.62d97e17.svg": "/static/media/css.62d97e17.svg",
+    "static/media/elastic.0dadb6aa.svg": "/static/media/elastic.0dadb6aa.svg",
+    "static/media/flask.9ff4d207.svg": "/static/media/flask.9ff4d207.svg",
+    "static/media/github.5b828af2.svg": "/static/media/github.5b828af2.svg",
+    "static/media/golang.cfb06037.svg": "/static/media/golang.cfb06037.svg",
+    "static/media/heroku.456445b6.svg": "/static/media/heroku.456445b6.svg",
+    "static/media/html.81faebdb.svg": "/static/media/html.81faebdb.svg",
+    "static/media/jquery.0fb1be87.svg": "/static/media/jquery.0fb1be87.svg",
+    "static/media/js.e0ebd798.svg": "/static/media/js.e0ebd798.svg",
+    "static/media/mongo.554c7d4b.svg": "/static/media/mongo.554c7d4b.svg",
+    "static/media/nodejs.5c376133.svg": "/static/media/nodejs.5c376133.svg",
+    "static/media/openvpn-ec2.png": "/static/media/openvpn-ec2.65ae8a37.png",
+    "static/media/python.a04b9168.svg": "/static/media/python.a04b9168.svg",
+    "static/media/react.70384772.svg": "/static/media/react.70384772.svg",
+    "static/media/terraform.594e5be4.svg": "/static/media/terraform.594e5be4.svg",
+    "static/media/travis.6aa04af9.svg": "/static/media/travis.6aa04af9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d992f18c.js",
+    "static/css/2.af0132db.chunk.css",
+    "static/js/2.5a74e921.chunk.js",
+    "static/css/main.8a62e75f.chunk.css",
+    "static/js/main.de06e91c.chunk.js"
+  ]
+}
