@@ -1,25 +1,45 @@
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     margin: auto;
+    border-radius: 3%;
+    padding: 2em;
+}
+
+.card { 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .item {
     border-style: solid;
     border-width: thin;
     padding: 1em;
-    min-height: max-content;
+    min-height: 350px;
     display: flex;
 }
 
 .content {
-    padding: 1.5em;
+    padding: 1em;
     display: flex;
+
+    ul {
+        margin-left: 3em;
+
+        li {
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+    }    
 }
 
 .image-content {
     margin: auto;
     align-items: center;    
+    text-decoration:none;
+    
+    a {
+        text-decoration:none;
+    }
 }
 
 .timeline-content {
@@ -28,6 +48,20 @@ img {
     h2 {
         width: fit-content;
         margin: auto;
+    }
+
+    button {
+        width: 70%;
+        font-size: 14px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #555555;
+        display: flex;
+        justify-content: center;
+        border: none;
+        margin: auto;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
     }
 }
 
@@ -39,6 +73,7 @@ img {
 
 .left {
     width: 70%;
+    padding: 0.5em;
 
     svg {
         width: 45px;
@@ -48,5 +83,6 @@ img {
 
 .right {
     width: 30%;
+    padding: 0.5em;
 }
 

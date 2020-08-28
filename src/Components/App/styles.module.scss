@@ -1,17 +1,5 @@
 @import '../../variables.scss';
 
-a {
-    color: #000;
-    border-bottom: 1px dotted rgba(0, 0, 0, 0.7);
-}
-
-a:hover,
-a:focus,
-a:active {
-    color: #d20014;
-    border-color: #d20014;
-}
-
 .content {
     width: 100%;
 }

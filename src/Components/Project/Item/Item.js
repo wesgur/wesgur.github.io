@@ -4,8 +4,6 @@ import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
-import logo from './assets/openvpn-ec2.png';
-
 import { ReactComponent as IconAws } from './icons/aws.svg';
 import { ReactComponent as IconCss } from './icons/css.svg';
 import { ReactComponent as IconFlask } from './icons/flask.svg';
@@ -22,21 +20,24 @@ import { ReactComponent as IconTerraform } from './icons/terraform.svg';
 import { ReactComponent as IconElastic } from './icons/elastic.svg';
 import { ReactComponent as IconMongo } from './icons/mongo.svg';
 import { ReactComponent as IconTravis } from './icons/travis.svg';
+import { ReactComponent as IconDocker } from './icons/docker.svg';
 
 const Item = (props) => (
     <li className={classNames(styles.item)}>
         <div className={classNames(styles.left, styles.content)}>
             <div className={classNames(styles.left)}>
-                <ProjectName name={props.project.name} />            
-                <ProjectDescription description={props.project.description} />            
+                <ProjectName name={props.project.name} />           
+                { props.project.summary ? <ProjectSummary summary={props.project.summary} /> : null }
+                <ProjectDescription descriptions={props.project.descriptions} />            
                 <ProjectTechStack tech_stack={props.project.tech_stack} />
             </div>
             <div className={classNames(styles.right, styles['timeline-content'])}>
                 <ProjectProgress progress={props.project.progress} />
+                { props.project.sandbox ? <ProjectSandbox progress={props.project.sandbox} /> : null }
             </div>
         </div>            
         <div className={classNames(styles.right, styles['image-content'])}>
-            <ProjectImage />
+            <ProjectImage link={props.project.link} img={props.project.img} />
         </div>        
     </li>
 );
@@ -45,16 +46,34 @@ const ProjectName = (props) => (
     <h2> {props.name} </h2>
 );
 
-const ProjectDescription = (props) => (
-    <h3> {props.description} </h3>
+const ProjectSummary = (props) => (
+    <p> {props.summary} </p>
 );
+
+const ProjectDescription = (props) => {
+    return ( 
+        <ul>
+            {
+                props.descriptions && props.descriptions.map((description, i) => {
+                    return ( <li key={i}> { description } </li> );
+                })
+            }
+        </ul>
+    );
+};
 
 const ProjectProgress = (props) => (
     <h2> {props.progress} </h2>
 );
 
+const ProjectSandbox = (props) => (
+    <button> Try it out </button>
+)
+
 const ProjectImage = (props) => (
-    <img src={logo} alt={"logo"}/>
+    <a href={props.link ? props.link : '#'}>
+        <img src={props.img ? props.img : 'screenshots/image-not-found.png' } alt={"project_image"}/>
+    </a>
 );
 
 const ProjectTechStack = (props) => {
@@ -63,11 +82,12 @@ const ProjectTechStack = (props) => {
             <h3> # Technology Stack </h3>
             { props.tech_stack && props.tech_stack.map((tech, i) => {
                 return ProjectTechnologyMapper(tech, i);    
-            }) }
+            })}
         </div>        
     );
 }
 
+// TODO: Refactor
 const ProjectTechnologyMapper = (tech, i) => {
     switch(tech){
         case "golang":             
@@ -102,6 +122,8 @@ const ProjectTechnologyMapper = (tech, i) => {
             return <IconMongo key={i}/>
         case "travis":
             return <IconTravis key={i}/>
+        case "docker":
+            return <IconDocker key={i}/>
         default:
             break;
     }
