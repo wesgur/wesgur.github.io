@@ -26,12 +26,14 @@ const Item = (props) => (
     <li className={classNames(styles.item)}>
         <div className={classNames(styles.left, styles.content)}>
             <div className={classNames(styles.left)}>
-                <ProjectName name={props.project.name} />            
-                <ProjectDescription description={props.project.description} />            
+                <ProjectName name={props.project.name} />           
+                { props.project.summary ? <ProjectSummary summary={props.project.summary} /> : null }
+                <ProjectDescription descriptions={props.project.descriptions} />            
                 <ProjectTechStack tech_stack={props.project.tech_stack} />
             </div>
             <div className={classNames(styles.right, styles['timeline-content'])}>
                 <ProjectProgress progress={props.project.progress} />
+                { props.project.sandbox ? <ProjectSandbox progress={props.project.sandbox} /> : null }
             </div>
         </div>            
         <div className={classNames(styles.right, styles['image-content'])}>
@@ -44,18 +46,34 @@ const ProjectName = (props) => (
     <h2> {props.name} </h2>
 );
 
-const ProjectDescription = (props) => (
-    <h3> {props.description} </h3>
+const ProjectSummary = (props) => (
+    <p> {props.summary} </p>
 );
+
+const ProjectDescription = (props) => {
+    return ( 
+        <ul>
+            {
+                props.descriptions && props.descriptions.map((description, i) => {
+                    return ( <li key={i}> { description } </li> );
+                })
+            }
+        </ul>
+    );
+};
 
 const ProjectProgress = (props) => (
     <h2> {props.progress} </h2>
 );
 
+const ProjectSandbox = (props) => (
+    <button> Try it out </button>
+)
+
 const ProjectImage = (props) => (
     <a href={props.link ? props.link : '#'}>
-        <img src={props.img ? props.img : '' } alt={"logo"}/>
-    </a>    
+        <img src={props.img ? props.img : 'screenshots/image-not-found.png' } alt={"project_image"}/>
+    </a>
 );
 
 const ProjectTechStack = (props) => {
