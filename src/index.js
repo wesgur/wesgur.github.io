@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 import './index.scss';
 
@@ -8,9 +9,9 @@ import { App } from './Components';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <HelmetProvider>
     <App />
-  </React.StrictMode>,
+  </HelmetProvider>,
   document.getElementById('root')
 );
 
