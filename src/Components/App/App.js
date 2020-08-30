@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import classNames from "classnames";
 
 import { default as Home } from '../../Views/Home';
@@ -10,24 +11,32 @@ import { default as Navigation } from '../Navigation';
 import { default as Container } from '../Container';
 
 import style from './styles.module.scss';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/src/Page/AnnotationLayer.css';
+
+const title = "Johnny | Software Developer";
 
 function App() {
   return (
-    <Router>
-      <Navigation />
-      <div className={classNames(style.content)}>
-        <Container>
-          <Switch>
-            <Route exact path="/" component={ Home } />
-            <Route path="/about" component={ About } />
-            <Route path="/project" component={ ProjectPage } />
-            <Route path="/resume" component={ Resume } />
-            <Redirect to="/" />
-          </Switch>
-        </Container>
-      </div>
-    </Router>
+    <div>
+      <Helmet>
+        <title> { title } </title>
+        <meta name="description" content="Johnny's personal website"/>
+      </Helmet>
+      <Router>
+        <Navigation />
+        <div className={classNames(style.content)}>
+          <Container>
+            <Switch>
+              <Route exact path="/" component={ Home } />
+              <Route path="/about" component={ About } />
+              <Route path="/project" component={ ProjectPage } />
+              <Route path="/resume" component={ Resume } />
+              <Redirect to="/" />
+            </Switch>
+          </Container>
+        </div>
+      </Router>    
+    </div>
   );
 }
 
