@@ -1,12 +1,13 @@
-.item{
-    // margin: auto;
+@import '../../../variables.scss';
+
+.item {
     flex: 0 0 auto;
     overflow-y: scroll; 
     position: relative;
-    width: calc(65% - #{$sidebar-width});
-    padding: 4em;
+    width: 50%;
     min-height: fit-content;
     min-width: fit-content;
+    padding: 4em;
 
     h1 {
         margin: 0;

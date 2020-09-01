@@ -1,0 +1,31 @@
+@import '../../../variables.scss';
+
+.skills {
+  ul {
+    list-style-type: none;
+  }
+}
+
+.skill-set {
+  p {
+    text-transform: uppercase;
+    margin: 0.5rem 0 0.5rem;
+  }
+}
+
+.skill-bar {
+  width: 100%; /* Full width */
+  height: 15px;
+  border-radius: 25px;
+  background-color: #ddd; /* Grey background */
+}
+
+.skill-level {  
+  width: var(--level);
+  background-color: #26abff !important;
+  color: white; /* White text color */    
+  text-align: right; /* Right-align text */
+  padding-right: 10px;
+  font-size: 13px;
+  font-weight: bold; 
+}
