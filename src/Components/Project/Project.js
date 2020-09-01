@@ -44,7 +44,7 @@ const projects = [
         ],
         "img" : "screenshots/perfect-pitch.png",
         "progress" : "Jan 2020 - May 2020",
-        "tech_stack" : [ "react", "html", "css", "js", "nodejs", "mongo", "heroku", "github", "docker" ],
+        "tech_stack" : [ "react", "html", "css", "js", "nodejs", "webpack", "mongo", "heroku", "github", "docker" ],
         "link" : "https://perfect-pitch-web.herokuapp.com/",
         "repository" : "https://github.com/dcsil/perfect-pitch",
     },
