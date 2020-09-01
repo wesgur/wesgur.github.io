@@ -1,12 +1,7 @@
-@import '../../../variables.scss';
+@import '../../variables.scss';
 
 .container {
     margin: auto;
-    padding: 2.5em;        
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    align-items: center;
-    justify-content: center;    
 }
 
 .viewer:hover {
@@ -22,6 +17,10 @@
     -ms-transition:transform 0.25s ease-in-out;
 }
 
+
+/*
+    TODO: Fix scss
+*/
 .react-pdf__Page__canvas {
     margin: auto;
 }

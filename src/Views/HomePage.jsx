@@ -2,7 +2,7 @@ import React from 'react';
 
 import { default as Page } from '../Components/Page';
 
-const Home = () => (
+const HomePage = () => (
     <Page> 
         <h1> Hey! </h1>
         <h1> I'm Dong Hyuk (Johnny) Jin, </h1>
@@ -10,4 +10,4 @@ const Home = () => (
     </Page>
 );
 
-export default Home;
+export default HomePage;

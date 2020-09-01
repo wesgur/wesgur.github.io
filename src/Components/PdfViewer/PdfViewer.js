@@ -6,7 +6,11 @@ import styles from './styles.module.scss';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const Viewer = (props) => {
+/**
+ * 
+ * @param {string} link * 
+ */
+const PdfViewer = (props) => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     
@@ -34,4 +38,4 @@ const Viewer = (props) => {
     );
 };
 
-export default Viewer;
+export default PdfViewer;

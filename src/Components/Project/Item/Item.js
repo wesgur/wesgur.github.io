@@ -21,6 +21,7 @@ import { ReactComponent as IconElastic } from './icons/elastic.svg';
 import { ReactComponent as IconMongo } from './icons/mongo.svg';
 import { ReactComponent as IconTravis } from './icons/travis.svg';
 import { ReactComponent as IconDocker } from './icons/docker.svg';
+import { ReactComponent as IconWebpack } from './icons/webpack.svg';
 
 const Item = (props) => (
     <li className={classNames(styles.item)}>
@@ -124,6 +125,8 @@ const ProjectTechnologyMapper = (tech, i) => {
             return <IconTravis key={i}/>
         case "docker":
             return <IconDocker key={i}/>
+        case "webpack":
+            return <IconWebpack key={i}/>
         default:
             break;
     }
