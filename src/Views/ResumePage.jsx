@@ -51,12 +51,14 @@ const skills = {
 }
 
 const ResumePage = (props) => (
-    <Container.Items>
-        <Container.Item>
-            <Resume experiences={experiences} skills={skills}/> 
-        </Container.Item>
-        <ResumeViewer link={link}> </ResumeViewer>
-    </Container.Items>            
+    <Page>
+        <Container.Items>
+            <Container.Item>
+                <Resume experiences={experiences} skills={skills}/> 
+            </Container.Item>
+            <ResumeViewer link={link}> </ResumeViewer>
+        </Container.Items>            
+    </Page>
 );
 
 export default ResumePage;
