@@ -9,7 +9,7 @@ const Navigation = (props) => (
         <Sidebar.List>
             <Sidebar.Menu exact to='/' label='home' type='Home'/>
             <Sidebar.Menu to='/about' label='about' type='About'/>
-            <Sidebar.Menu to='/project' label='project' type='Project' />
+            <Sidebar.Menu to='/projects' label='project' type='Project' />
             <Sidebar.Menu to='/resume' label='resume' type='Resume' />
         </Sidebar.List>    
         <Sidebar.Footer>
