@@ -19,6 +19,13 @@ const description = "Johnny's personal website";
 const keywords = [ "Personal Website", "Johnny" ];
 const author = "Dong Hyuk Jin"
 
+const meta = {
+	title: "Johnny's Personal Website",
+	description: "Welcome to Johnny's website. Feel free to contact me!",
+	image: "https://www.wesgur.com/screenshots/homepage.png",
+	url: "https://www.wesgur.com",
+};
+
 function App() {
 	return (
 		<div className={classNames(styles.app)}>
@@ -28,10 +35,10 @@ function App() {
 				<meta name="keywords" content={keywords.join(" ")}/>
 				<meta name="author" content={author}/>
 				
-				<meta property="og:title" content="Johnny's Personal Website"/>
-				<meta property="og:description" content="Welcome to Johnny's website. Feel free to contact me!"/>
-				<meta property="og:image" content="https://www.wesgur.com/screenshots/homepage.png"/>
-				<meta property="og:url" content="https://www.wesgur.com"/>
+				<meta property="og:title" content={meta.title}/>
+				<meta property="og:description" content={meta.description}/>
+				<meta property="og:image" content={meta.image}/>
+				<meta property="og:url" content={meta.url}/>
 			</Helmet>
 			<Router>
 				<Navigation />
@@ -40,7 +47,7 @@ function App() {
 						<Switch>
 							<Route exact path="/" component={ HomePage } />
 							<Route path="/about" component={ AboutPage } />
-							<Route path="/project" component={ ProjectPage } />
+							<Route path="/projects" component={ ProjectPage } />
 							<Route path="/resume" component={ ResumePage } />
 							<Redirect to="/" />
 						</Switch>

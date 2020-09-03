@@ -36,15 +36,15 @@ const projects = [
     },
     {
         "name" : "Perfect Pitch",
-        "summary" : "Responsive web application solving music licensing problems. Work done in a team of 4 as a part of software development and start up course. ",
+        "summary" : "Responsive web application solving music licensing problems. Work done in a team of 2 as a part of software development and start up course.",
         "descriptions" : [
             "Developed with React",
-            "Restful API developed with Node.js and Express",
-            "OpenAPI Documentation",
-            "Mongo Database",
-            "Docker setup for development environment",
-            "CI/CD setup with Github Actions",
-            "Automatic deployment to Heroku",
+            "Restful API developed with Node.js and Express with OpenAPI specifications",
+            "Spotify API integration for authentication and user data",
+            "Mongo database used for persistent data",
+            "Docker and docker-compose setup for development environment",
+            "CI/CD setup with Github Actions deploying to Heroku instnace",
+            "Organize scrum board with Github Project Management"
         ],
         "img" : "screenshots/perfect-pitch.png",
         "progress" : "Jan 2020 - May 2020",
@@ -59,10 +59,10 @@ const projects = [
             "Developed with React and Redux",
             "Restful API developed with Node.js and Express",
             "OpenAPI Documentation",
-            "Mongo Database",
-            "CI/CD with Travis CI",
+            "Used mongo database for persistent data and caching",
+            "CI/CD with Travis CI deploying to Heroku instance",
             "Docker setup for development and production environment",            
-            "Elastic search integration for search enhancement."
+            "Elastic search integration for search enhancement"
         ],
         "img" : "screenshots/cancer-care.png",
         "progress" : "Sept 2019 - Dec 2019",
@@ -72,7 +72,7 @@ const projects = [
     },
     {
         "name" : "Youtube Music Metadata parser",
-        "summary" : "A web application designed to resolve music metadata from youtube links. This was developed targeting for users who aren't able to recall the music album.",
+        "summary" : "A web application designed to resolve music metadata from youtube links. This project was developed targeting users who requires metadata for sound files.",
         "descriptions" : [
             "Service developed with Python Flask",
             "Web crawling with Beautiful Soup library",

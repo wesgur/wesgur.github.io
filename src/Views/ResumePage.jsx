@@ -47,7 +47,10 @@ const skills = {
     ],
     "os" : [
         "mac", "ubuntu", "debian"
-    ]
+    ],
+    "cloud" : {
+        "aws" : [ "ec2", "ecs", "cloudformation", "cloudwatch", "lambda", "api gateway", "iam" ]
+    }        
 }
 
 const ResumePage = (props) => (

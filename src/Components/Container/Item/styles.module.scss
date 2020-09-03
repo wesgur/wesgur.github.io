@@ -2,7 +2,6 @@
 
 .item {
     flex: 0 0 auto;
-    overflow-y: scroll; 
     position: relative;
     width: 50%;
     min-height: fit-content;
@@ -13,3 +12,18 @@
         margin: 0;
     }
 }
+
+// Phone
+@media only screen and (max-width: 768px) {
+    .item {
+        padding: 0;
+    }
+}
+
+// Content-fit
+@media(max-width: 1472px){
+    .item {
+        width: 90%;
+        // margin: auto;
+    }    
+  }
