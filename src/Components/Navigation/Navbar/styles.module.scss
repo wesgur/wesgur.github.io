@@ -1,0 +1,121 @@
+@import 'src/variables.scss';
+
+.navbar {
+    top: 0;
+    color: $color-primary;
+    width: inherit;
+    z-index: 1000;
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    flex-direction: row;
+    backdrop-filter: blur(8px);
+    -ms-backdrop-filter: blur(8px);
+    -moz-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+
+    & a {
+        color: $color-primary;
+        opacity: 0.5;
+        border: none !important;
+        transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-primary;
+            opacity: 1 !important;
+        }
+    }
+
+    &.expanded {
+        background: $color-inverse;
+    }
+
+    @media(min-width: $breakpoint) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.navToggle {
+    margin: 1rem;
+    border: 0;
+    padding: 0;
+    content: '';
+    display: flex;
+    position: relative;
+    min-width: 1.2rem;
+    min-height: 1.2rem;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+
+    & span,
+    & span:before,
+    & span:after {
+        width: 100%;
+        height: 2px;
+        display: block;
+        content: '';
+        position: absolute;
+        background-color: $color-primary;
+    }
+
+    & span:before {
+        top: -5px;
+        transition: top 0.1s ease;
+    }
+
+    & span:after {
+        top: 5px;
+        transition: top 0.1s ease;
+    }
+
+    &.active span {
+        transform: rotate(135deg);
+        transition: transform 0.15s ease;
+        transition-delay: 0.1s;
+
+        &:before,
+        &:after {
+            top: 0;
+            transform: rotate(90deg);
+            transition: transform 0.15s ease;
+            transition-delay: 0.1s;
+        }
+    }
+}
+
+.nav {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.navCollapse {
+    padding: 0 2rem;
+    flex-basis: 100%;
+    border-top: 1px solid $border-color;
+}
+
+.navItem {
+    display: block;
+    position: relative;
+    text-transform: lowercase;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+
+    &.active {
+        color: $color-primary;
+        opacity: 1 !important;
+    }
+}

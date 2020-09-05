@@ -18,6 +18,10 @@
 
 // Phone
 @media only screen and (max-width: 768px) {
+    .container {
+        padding: 1em;
+    }
+
     .item {
         padding: 0;
     }

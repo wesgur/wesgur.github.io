@@ -7,3 +7,10 @@
     min-height: fit-content;
     min-width: fit-content;
 }
+
+// Phone
+@media only screen and (max-width: 768px) {
+    .items {
+        flex-direction: column;
+    }
+}
