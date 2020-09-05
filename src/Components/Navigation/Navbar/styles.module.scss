@@ -1,6 +1,7 @@
 @import 'src/variables.scss';
 
 .navbar {
+    background: $color-inverse;
     top: 0;
     color: $color-primary;
     width: inherit;
