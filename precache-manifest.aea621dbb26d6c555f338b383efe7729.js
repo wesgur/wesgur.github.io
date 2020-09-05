@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "82562810e4337c4474604880cb846249",
+    "revision": "fb9e93461cf6174c6c65a2048d96bd81",
     "url": "wesgur.github.io/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "wesgur.github.io/static/css/2.59815e44.chunk.css"
   },
   {
-    "revision": "09b1cffdaf0fedbe2150",
+    "revision": "afaa77d03a31d47e3804",
     "url": "wesgur.github.io/static/css/main.85d2eec8.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "wesgur.github.io/static/js/2.29195aa0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "09b1cffdaf0fedbe2150",
-    "url": "wesgur.github.io/static/js/main.ab1d8e86.chunk.js"
+    "revision": "afaa77d03a31d47e3804",
+    "url": "wesgur.github.io/static/js/main.6a89087b.chunk.js"
   },
   {
     "revision": "2305d04399873a2966c9",
