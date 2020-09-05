@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import classNames from "classnames";
+import MetaTags from 'react-meta-tags';
 
 import { default as HomePage } from '../../Views/HomePage';
 import { default as ResumePage } from '../../Views/ResumePage';
@@ -30,16 +31,19 @@ function App() {
 	return (
 		<div className={classNames(styles.app)}>
 			<Helmet>
-				<title> { title } </title>
+				<title> { title } </title>				
+			</Helmet>
+			<MetaTags>
 				<meta name="description" content={description} />
 				<meta name="keywords" content={keywords.join(" ")}/>
 				<meta name="author" content={author}/>
 				
+				<meta property="og:type" content="website"/>
 				<meta property="og:title" content={meta.title}/>
 				<meta property="og:description" content={meta.description}/>
 				<meta property="og:image" content={meta.image}/>
 				<meta property="og:url" content={meta.url}/>
-			</Helmet>
+			</MetaTags>
 			<Router>
 				<Navigation />
 				<div className={classNames(styles.content)}>

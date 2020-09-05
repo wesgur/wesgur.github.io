@@ -10,7 +10,6 @@ import Overlay from '../Overlay';
 
 import styles from './styles.module.scss';
 
-
 const NavbarContext = React.createContext({ expanded: false });
 
 const Navbar = (props) => {
