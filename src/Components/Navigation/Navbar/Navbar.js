@@ -86,12 +86,18 @@ const Menu = (props) => {
             {props.label}
         </NavLink>
     );
-}
+};
 
+const Footer = (props) => (
+    <div className={classNames(styles.footer)}>
+        {props.children}
+    </div>
+);
 
 Navbar.Collapse = Collapse;
 Navbar.Toggle = Toggle;
 Navbar.List = List;
 Navbar.Menu = Menu;
+Navbar.Footer = Footer;
 
 export default Navbar;

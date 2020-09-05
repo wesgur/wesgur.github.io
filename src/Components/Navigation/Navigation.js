@@ -47,6 +47,12 @@ const NavigationTopbar = () => (
                 <Navbar.Menu to='/projects' label='projects' />
                 <Navbar.Menu to='/resume' label='resume'/>
             </Navbar.List>
+            <Navbar.Footer>
+                <Sidebar.Footer.Item link={social.github} label='Github' type='Github' />    
+                <Sidebar.Footer.Item link={social.linkedin} label='LinkedIn' type='LinkedIn' />
+                <Sidebar.Footer.Item link={social.stackoverflow} label='Stackoverflow' type='Stackoverflow' />                
+                <Sidebar.Footer.Item link={social.mail} label='Mail' type='Mail' />
+            </Navbar.Footer>
         </Navbar.Collapse>
     </Navbar>
 );
