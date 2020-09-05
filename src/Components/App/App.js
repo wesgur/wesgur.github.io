@@ -44,7 +44,7 @@ function App() {
 				<meta property="og:image" content={meta.image}/>
 				<meta property="og:url" content={meta.url}/>
 			</MetaTags>
-			<Router basename={process.env.PUBLIC_URL}>
+			<Router basename={`${process.env.PUBLIC_URL}/`}>
 				<Navigation />
 				<div className={classNames(styles.content)}>
 					<Navigation.Topbar />
