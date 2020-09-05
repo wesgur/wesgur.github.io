@@ -31,6 +31,7 @@ const PdfViewer = (props) => {
                     onLoadSuccess={onDocumentLoadSuccess}
                     onLoadError={onDocumentLoadError}>
                     <Page 
+                        className={classNames(styles["viewer-page"])}
                         pageNumber={pageNumber} />                        
                 </Document>            
             </a>

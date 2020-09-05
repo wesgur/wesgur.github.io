@@ -17,10 +17,35 @@
     -ms-transition:transform 0.25s ease-in-out;
 }
 
+// .react-pdf__Page__canvas {
+//     margin: auto;
+//     width: 100%;
+//     height: auto;
+// }
+
 
 /*
     TODO: Fix scss
 */
-.react-pdf__Page__canvas {
-    margin: auto;
+
+// Phone
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 1em;
+    }
+
+    .item {
+        padding: 0;
+    }
+
+    .viewer-page > * {
+        width: 100% !important;
+        height: auto !important;         
+    }
+
+    .viewer-page {
+        div {
+            display: none !important;
+        }
+    }
 }
