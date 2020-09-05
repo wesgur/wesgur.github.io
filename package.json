@@ -14,6 +14,7 @@
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.6",
     "react-icons": "^3.10.0",
+    "react-meta-tags": "^0.7.4",
     "react-pdf": "^5.0.0-beta.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
