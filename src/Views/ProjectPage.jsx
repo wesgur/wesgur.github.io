@@ -31,7 +31,7 @@ const projects = [
         "img" : "screenshots/homepage.png",
         "progress" : "April 2020 - Ongoing",
         "tech_stack" : [ "react", "js", "html", "scss", "css", "github", "docker" ],
-        "link" : "/project",
+        "link" : "/projects",
         "repository" : "https://github.com/wesgur/wesgur.github.io",
     },
     {
