@@ -5,3 +5,10 @@
     // border-bottom: 1px solid $border-color;
     overflow: auto;
 }
+
+//Phone
+@media only screen and (max-width: 768px) {
+    .page {
+        padding: 6rem 0 0rem;
+    }
+}

@@ -47,7 +47,7 @@ const NavIconMapper = (type) => {
             return <FaHome size={NAV_ICON_SIZE} />
         case "About":
             return <FaUser size={NAV_ICON_SIZE}/>
-        case "Project":
+        case "Projects":
             return <FaCode size={NAV_ICON_SIZE}/>  
         case "Resume":
             return <FaRegFilePdf size={NAV_ICON_SIZE}/>

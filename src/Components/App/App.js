@@ -43,6 +43,7 @@ function App() {
 			<Router>
 				<Navigation />
 				<div className={classNames(styles.content)}>
+					<Navigation.Topbar />
 					<Container>
 						<Switch>
 							<Route exact path="/" component={ HomePage } />

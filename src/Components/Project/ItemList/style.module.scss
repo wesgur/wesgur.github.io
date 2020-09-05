@@ -6,3 +6,10 @@ ul {
     list-style-type: none;
 }
 
+// Phone
+@media only screen and (max-width: 768px) {
+    .itemlist {
+        display: flex;
+        flex-direction: column;
+    }
+}

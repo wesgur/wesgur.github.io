@@ -86,3 +86,51 @@ img {
     padding: 0.5em;
 }
 
+
+// Phone
+@media only screen and (max-width: 768px) {
+    .item {
+        padding: 0 0 2em 0;
+        border-style: none;
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            padding: 0;
+        }
+    }
+
+    .content {
+        ul {
+            margin-left: 1em;
+        }
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+
+        h2 {
+            text-decoration: underline;
+        }
+    }
+
+    .right {
+        width: 100%;
+        padding: 0;
+    }
+
+    img {
+        padding: 0;
+    }
+
+    .timeline-content {
+        display: none;
+    }
+
+    .tech-stack {
+        margin-bottom: 2em;
+    }
+}

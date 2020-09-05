@@ -17,6 +17,7 @@
     "react-pdf": "^5.0.0-beta.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
+    "react-transition-group": "^4.4.1",
     "webpack": "4.42.0"
   },
   "scripts": {

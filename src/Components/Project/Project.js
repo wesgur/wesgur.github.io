@@ -2,14 +2,15 @@ import React from 'react';
 
 import classNames from 'classnames';
 
+import { default as Container } from '../Container';
 import { default as ItemList } from './ItemList';
 import { default as Item } from './Item';
-import style from './style.module.scss';
+import styles from './styles.module.scss';
 
 // TODO: Image size consistency
 
 const Project = (props) => (
-    <div className={classNames(style.container)}>
+    <Container>
         <h1> Projects </h1>
 
         <ItemList> 
@@ -19,7 +20,7 @@ const Project = (props) => (
                 )
             })}
         </ItemList>
-    </div>
+    </Container>
 );
 
 export default Project;

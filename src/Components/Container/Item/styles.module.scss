@@ -16,7 +16,9 @@
 // Phone
 @media only screen and (max-width: 768px) {
     .item {
-        padding: 0;
+        border-style: none;
+        border-width: unset;
+        padding: 0em !important;
     }
 }
 
