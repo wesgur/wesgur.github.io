@@ -29,7 +29,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile      
       - name: Build page 
-        run: CI=false yarn build
+        run: yarn build
+        env:
+          CI: false
+          PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
