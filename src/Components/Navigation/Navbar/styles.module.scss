@@ -1,6 +1,7 @@
 @import 'src/variables.scss';
 
 .navbar {
+    background: $color-inverse;
     top: 0;
     color: $color-primary;
     width: inherit;
@@ -118,4 +119,10 @@
         color: $color-primary;
         opacity: 1 !important;
     }
+}
+
+.footer { 
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2em 0 0 0;
 }
