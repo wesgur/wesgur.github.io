@@ -4,13 +4,15 @@ import { Helmet } from 'react-helmet-async';
 import classNames from "classnames";
 import MetaTags from 'react-meta-tags';
 
+import { default as AppProvider } from './AppProvider';
 import { default as HomePage } from '../../Views/HomePage';
 import { default as ResumePage } from '../../Views/ResumePage';
 import { default as ProjectPage } from '../../Views/ProjectPage';
 import { default as AboutPage } from '../../Views/AboutPage';
 
-import { default as Navigation } from '../Navigation';
 import { default as Container } from '../Container';
+import { default as Navigation } from '../Navigation';
+import { default as ThemeProvider } from '../ThemeProvider';
 
 import styles from './styles.module.scss';
 import 'react-pdf/src/Page/AnnotationLayer.css';
@@ -44,21 +46,32 @@ function App() {
 				<meta property="og:image" content={meta.image}/>
 				<meta property="og:url" content={meta.url}/>
 			</MetaTags>
-			<Router>
-				<Navigation />
-				<div className={classNames(styles.content)}>
-					<Navigation.Topbar />
-					<Container>
-						<Switch>
-							<Route exact path="/" component={ HomePage } />
-							<Route path="/about" component={ AboutPage } />
-							<Route path="/projects" component={ ProjectPage } />
-							<Route path="/resume" component={ ResumePage } />
-							<Redirect to="/" />
-						</Switch>
-					</Container>
-				</div>
-			</Router>    
+			<AppProvider>
+				<Router>
+					<Navigation />
+					<div className={classNames(styles.content)}>
+						<Navigation.Topbar />
+						<Container>
+							<Switch>
+								<Route exact path="/" component={ HomePage } />
+								<Route path="/about" component={ AboutPage } />
+								<Route path="/projects" component={ ProjectPage } />
+								<Route path="/resume" component={ ResumePage } />
+								<Redirect to="/" />
+							</Switch>
+						</Container>						
+						<ThemeProvider.Fab />
+
+						{/* <Fab aria-label={fab.label} className={fab.className} color={fab.color}>
+							{fab.icon} Light Mode
+						</Fab> */}
+						{/* <Fab variant="extended" aria-label={fab.label} className={fab.className} color={fab.color}>
+							<Brightness7Icon/>
+							Light Mode
+						</Fab> */}
+					</div>
+				</Router>    				
+			</AppProvider>
 		</div>
 	);
 }
