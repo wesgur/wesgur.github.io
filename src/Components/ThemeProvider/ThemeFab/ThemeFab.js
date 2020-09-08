@@ -36,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
 
 const ThemeFab = (props) => {
     const storageTheme = localStorage.getItem(STORAGE_THEME_KEY);
-    const [themeState, setThemeState] = useState(storageTheme=='light');
+    const theme = storageTheme ? (storageTheme=='light') : true;
+    const [themeState, setThemeState] = useState(theme);
 
     const classes = useStyles();
 	const fabLight = {
