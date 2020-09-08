@@ -2,9 +2,8 @@
 
 .maintenance {
     a {
-        color: $color-primary;
         text-decoration: none;
-        border-bottom: 1px dotted $color-secondary;
+        border-bottom: 1px dotted $color-text-accent;
     
         &:hover,
         &:focus,
@@ -12,5 +11,11 @@
             color: $color-accent;
             border-color: $color-accent
         }
+    }
+}
+
+.maintenance .dark-mode {
+    a {
+        border-bottom: 1px dotted $dark-color-text-accent;
     }
 }

@@ -4,6 +4,8 @@ import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
+import { STORAGE_THEME_KEY } from '../../App';
+
 import { ReactComponent as IconAws } from './icons/aws.svg';
 import { ReactComponent as IconCss } from './icons/css.svg';
 import { ReactComponent as IconFlask } from './icons/flask.svg';
@@ -71,12 +73,6 @@ const ProjectSandbox = (props) => (
     <button> Try it out </button>
 )
 
-const ProjectImage = (props) => (
-    <a href={props.link ? props.link : '#'}>
-        <img src={props.img ? props.img : 'screenshots/image-not-found.png' } alt={"project_image"}/>
-    </a>
-);
-
 const ProjectTechStack = (props) => {
     return (
         <div className={classNames(styles['tech-stack'])}>
@@ -131,6 +127,27 @@ const ProjectTechnologyMapper = (tech, i) => {
             break;
     }
 }
+
+const ProjectImage = (props) => {
+    const theme = localStorage.getItem(STORAGE_THEME_KEY);
+    let img = props.img
+    
+    if (typeof img == 'object'){
+        if (theme == 'dark'){
+            img = props.img['dark'];
+        } else if (theme == 'light'){
+            img = props.img['light']
+        } else {
+            img = props.img['default'];
+        }
+    }
+
+    return (
+        <a href={props.link ? props.link : '#'}>
+            <img src={img ? img : 'screenshots/image-not-found.png' } alt={"project_image"}/>
+        </a>
+    );    
+};
 
 Item.Name = ProjectName;
 Item.Description = ProjectDescription;
