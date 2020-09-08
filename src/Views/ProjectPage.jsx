@@ -28,7 +28,7 @@ const projects = [
             "CI/CD setup with Github Actions",
             "Automatic deployment to Github Pages"
         ],
-        "img" : "screenshots/homepage.png",
+        "img" : "screenshots/homepage_dark.png",
         "progress" : "April 2020 - Ongoing",
         "tech_stack" : [ "react", "js", "html", "scss", "css", "github", "docker" ],
         "link" : "/projects",

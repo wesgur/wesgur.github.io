@@ -1,8 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 import { useMediaPredicate } from "react-media-hook";
 
-const STORAGE_THEME_KEY = "theme";
-
+export const STORAGE_THEME_KEY = "Theme";
 export const AppContext = createContext();
 
 const AppProvider = props => {
@@ -22,4 +21,3 @@ const AppProvider = props => {
 }
 
 export default AppProvider;
-// export { AppContext, AppProvider };
