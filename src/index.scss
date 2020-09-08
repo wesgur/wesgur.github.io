@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+@import 'src/variables.scss';
 
 body {
   margin: 0;
@@ -26,12 +27,43 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1d1d1d;
+
+  h1, h2, h3,
+  h4, h5, h6 {
+    color: $color-inverse;
+  }
+
+  a, p, li {
+    color: $color-inverse;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px dotted $color-text-accent;
+  }
+}
+
+html.dark-mode, body.dark-mode {
+  background-color: $dark-color-secondary;
+  color: $dark-color-primary;  
+
+  h1, h2, h3,
+  h4, h5, h6 {
+    color: #fff;
+  }
+
+  a, p, li {
+    color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px dotted $dark-color-text-accent;
+  }
 }
 
 h1, h2, h3,
 h4, h5, h6 {
-  color: #fff;
   margin: 2rem 0 1rem;
   font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
   text-transform: uppercase;

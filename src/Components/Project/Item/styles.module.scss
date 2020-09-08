@@ -35,10 +35,10 @@ img {
 .image-content {
     margin: auto;
     align-items: center;    
-    text-decoration:none;
     
     a {
-        text-decoration:none;
+        text-decoration: none;
+        border: none !important;
     }
 }
 
