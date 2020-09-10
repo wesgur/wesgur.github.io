@@ -67,7 +67,6 @@ const ThemeFab = (props) => {
 
     useEffect(() => {
         const getTheme = localStorage.getItem(STORAGE_THEME_KEY);
-        console.log(getTheme);
         if (getTheme === 'dark') {
             return  document.body.classList.add('dark-mode');
         } else {
