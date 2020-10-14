@@ -7,8 +7,6 @@ ADD package-lock.json .
 
 RUN npm install
 
-RUN npm rebuild node-sass
-
 ADD . .
 
 ENV NODE_ENV=production
