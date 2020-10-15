@@ -1,1 +1,4 @@
-export { default } from './Page';
+export { default as PageTitle } from './PageTitle';
+
+
+

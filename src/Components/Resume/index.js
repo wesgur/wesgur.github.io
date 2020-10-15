@@ -1,2 +1,1 @@
-export { default } from './Resume';
-export { ResumeViewer } from './ResumeViewer';
+export { default as Resume } from './Resume';
