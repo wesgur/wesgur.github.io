@@ -1,0 +1,43 @@
+.sticky-card {
+    align-self: flex-start;
+    border: 1px;
+    position: sticky;
+    top: 5em;
+    z-index: 1020;
+}
+
+.profile {
+    border: 1px solid rgba(0, 0, 0, 0.125);    
+    background-color: #fff;
+    padding: 0.75rem 1.25rem;
+}
+
+.card {
+    align-self: flex-start;
+    border: 1px;
+    position: sticky;
+    margin-top: 0.5em;
+    top: 17.5em;  
+    z-index: 1020;
+
+    p {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-size: 14px;
+        margin: 1rem;
+    }
+}
+
+.expandedCard {
+    align-self: flex-start;
+    border: 1px;
+    position: sticky;
+    margin-top: 0.5em;
+    top: 37.5em;   
+    z-index: 1020;
+
+    p {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-size: 14px;
+        margin: 1rem;
+    }
+}

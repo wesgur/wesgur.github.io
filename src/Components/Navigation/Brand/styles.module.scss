@@ -1,0 +1,27 @@
+.brand {
+    margin: 1rem 0 !important;
+    width: inherit;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 1;
+    text-decoration: none !important;
+
+    & a {
+        opacity: 1 !important;
+    }
+
+    & small {
+        display: block;
+        font-size: 85%;
+    }
+
+    &.large {
+        padding: 0 2rem;
+        font-size: 2rem;
+        margin: 5rem 0 2rem !important;
+    }
+}
