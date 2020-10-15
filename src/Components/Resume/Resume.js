@@ -1,23 +1,42 @@
 import React from 'react';
 
-import classNames from 'classnames';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { default as Education } from './Education';
-import { default as Experiences } from './Experiences';
-import { default as Skills } from './Skills';
+import { Education } from './Education';
+import WorkExperience from './WorkExperience/WorkExperience';
+import Activity from './Activity/Activity';
 
-import styles from './styles.module.scss';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    '& h4' : {
+      textAlign: 'center',
+      marginBottom: '2rem',
+    },
+    '& p,h5' : {
+      margin: 0,
+    }, 
+    '& > div' : {
+      margin: '1.5rem 0'
+    }
+  }
+}));
 
-const Resume = (props) => (
-    <div className={classNames(styles.resume)}>
-        <h1> Resume Summary </h1>
-            
-        <Education/>
+// TODO: Add tech skills
+const Resume = (props) => {
+  const classes = useStyles();
 
-        <Experiences experiences={props.experiences}/>
+  return (
+    <div className={classes.root}>
+      <WorkExperience/>
 
-        <Skills skills={props.skills}/>                             
-    </div>        
-);
+      <Education/>
+
+      <Activity/>
+
+      {/* <h4> Technology Skills </h4>   */}
+    </div>
+  );
+}
 
 export default Resume;

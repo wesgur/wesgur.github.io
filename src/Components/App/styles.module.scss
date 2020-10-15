@@ -1,12 +1,1 @@
 @import '../../variables.scss';
-
-.content {
-    width: 100%;
-}
-
-@media(min-width: 769px) {
-    .content {
-        width: $container-width;
-        margin-left: $sidebar-width;
-    }
-}

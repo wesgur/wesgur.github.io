@@ -1,50 +1,66 @@
 import React from 'react';
-import classNames from 'classnames';
 
-import styles from './style.module.scss';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Education = (props) => (
-    <div className={classNames(styles.sector)}>
-        <h2> Education </h2>
-        
-        <div className={classNames(styles.content)}>
-            <div className={classNames(styles.left)}>
-                <School> </School>
-                <Degree> </Degree>
-            </div>
-            <div className={classNames(styles.right)}>
-                <Timeline> </Timeline>
-            </div>
-        </div>                    
-    </div>
-);
+const education = [
+    {
+        "school": "University of Toronto, St.Geroge",
+        "major": "Computer Science, Specialist",
+        "schoolLink": "https://www.utoronto.ca/",
+        "location": "Toronto, Canada",
+        "timeline": "Sept. 2013 - May. 2020",        
+    },
+    {
+        "school": "International School Manila",
+        "major": "International Baccalaureate, Diploma",
+        "schoolLink": "https://www.ismanila.org/",
+        "location": "Manila, Philippines",
+        "timeline": "Nov. 2007 - May. 2013"
+    }
+];
 
-const School = (props) => {
+const useStyles = makeStyles((theme) => ({
+    education: {
+        width: '100%',
+        marginBottom: '1rem'
+    },
+    timeline: {
+        float: 'right',
+    },
+}));
+
+//TODO: Add relevant courses
+const Education = (props) => {
+    const classes = useStyles();
+
     return ( 
-        <div className={classNames(styles.school)}>
-            <h3> University of Toronto, St.George </h3> 
-        </div>
-    );
-}
+        <Grid container spacing={0}>
+            <Grid item xs={12} >
+                <h4> Education </h4>          
+            </Grid>
 
-const Degree = (props) => {
-    return (
-        <div className={classNames(styles.degree)}>
-            <h4> Honours B.Sc. Computer Science, Specialist</h4>
-        </div>
-    );
-}
-
-const Timeline = (props) => {
-    return (
-        <div className={classNames(styles.timeline)}>
-            <h3> Sept 2013 - May 2020 </h3>
-        </div>
-    );
-}
-
-Education.School = School;
-Education.Degree = Degree;
-Education.Timeline = Timeline;
+            {
+                education.map((e, i) => {                    
+                    return (
+                        <div className={classes.education} key={i}>
+                            <Grid item xs={12}>
+                                <h5> {e.major} @<a href={e.schoolLink}>{e.school}</a></h5>
+                            </Grid>
+                            <Grid container direction="row">
+                                <Grid item xs={6}>
+                                    <p> {e.location} </p>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <p className={classes.timeline}> {e.timeline} </p>
+                                </Grid>
+                            </Grid>
+                        </div>
+                    )
+                })
+            }
+        </Grid>
+     );
+};
 
 export default Education;
