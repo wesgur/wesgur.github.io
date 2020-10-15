@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 @import 'src/variables.scss';
+@import "node_modules/bootstrap/scss/bootstrap";
 
 body {
   margin: 0;
@@ -8,11 +10,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-y: scroll;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 *, ::after, ::before {
@@ -39,9 +43,8 @@ html, body {
     color: $color-inverse;
   }
 
-  a {
-    text-decoration: none;
-    border-bottom: 1px dotted $color-text-accent;
+  a:hover {
+    color: $color-accent;
   }
 }
 
@@ -67,8 +70,7 @@ html.dark-mode, body.dark-mode {
 h1, h2, h3,
 h4, h5, h6 {
   margin: 2rem 0 1rem;
-  font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
+  font-family: 'Roboto', 'Roboto Condensed', Arial, Helvetica, sans-serif;
 }
 
 h1:first-child,
@@ -85,7 +87,7 @@ ul, ol {
 }
 
 li {
-  font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', 'Roboto Condensed', Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -95,11 +97,4 @@ a {
 p {
   margin: 0 0 1rem;
   line-height: 1.7;
-}
-
-/* Scrollable Resume Page */
-@media(min-width: 1180px){
-  html, body {
-      // overflow: hidden;
-  }    
 }
