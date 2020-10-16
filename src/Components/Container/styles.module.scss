@@ -1,5 +1,13 @@
-
 .container {
     margin: 0 auto;
-    padding: 20px 30px;
+    padding: 0px 10px;
 }
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .container {
+        margin: 0 auto;
+        padding: 20px 30px;
+    }
+ }
