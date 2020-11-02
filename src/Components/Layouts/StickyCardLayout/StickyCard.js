@@ -1,9 +1,10 @@
 // import React from 'react';
 import classNames from 'classnames';
+import axios from 'axios';
 
 import styles from './styles.module.scss';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -21,14 +22,14 @@ import { Timeline, TimelineEvent } from 'react-event-timeline';
 import { Github, Linkedin, Stackoverflow } from '@icons-pack/react-simple-icons';
 
 
-// const timeline = [
-//     {
-//         "title": "Title",
-//         "time": "2020-02-02 02:24 PM",
-//         "content" : "Hello world"
-//     }
-// ]
-const initialTimeline = [];
+const initialTimeline = [
+    {
+        "title": "Title",
+        "time": "2020-02-02 02:24 PM",
+        "content" : "Hello world"
+    }
+]
+// const initialTimeline = [];
 const useStyles = makeStyles((theme) => ({
     root: {
         [theme.breakpoints.down("md")] : {
@@ -68,7 +69,14 @@ const useStyles = makeStyles((theme) => ({
 export const StickyCard = (props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
-    const [timeline, setTimeline] = useState(initialTimeline);
+    const [timeline, setTimeline] = useState([]);
+
+    useEffect(() => {
+        axios.get(`${process.env.API_URL}/events`)
+            .then(res => {
+                setTimeline(res);
+            });        
+    }, [timeline]);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -125,13 +133,16 @@ export const StickyCard = (props) => {
                         timeline.length > 0 ? (
                             <Timeline>
                                 { timeline.map((event, i) => (
-                                    <TimelineEvent title={event.title} createdAt={event.time}>
-                                        { event.content }
+                                    <TimelineEvent 
+                                        title={event.commit_details.repo} 
+                                        icon={<Github>commit</Github>}
+                                        createdAt={event.commit_details.date}>
+                                        { event.commit_details.message }
                                     </TimelineEvent>
                                 )) }
                             </Timeline>
                         ) : (
-                            <p> Timeline isn't available at this moment. </p>
+                            <p> There is nothing to show in timeline </p>
                         )
                     }
                 {/* <Timeline>

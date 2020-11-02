@@ -10,6 +10,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import { HashLink } from 'react-router-hash-link';
+
 import { PageTitle } from '../Components/Page';
 
 const projects = [ 
@@ -150,36 +152,36 @@ const ProjectItem = (props) => {
   const classes = useStyles();
 
   return (
-    <Grid item md={6}>
-      <Card className={classes.root}>
-        <CardActionArea className={classes.cardArea}>
-          <a href={props.project.link ? props.project.link : '#'} target={ props.project.link ? '_blank' : '' } rel="noopener noreferrer">          
-            <CardMedia
-              alt={props.project.name}
-              className={classes.cardMedia}
-              component="img"
-              image={props.project.img}
-              title={props.project.name}
-            />
-            <CardContent className={classes.cardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                {props.project.name}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {props.project.summary}
-              </Typography>
-            </CardContent>
-          </a>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
+    <Grid item md={6}>      
+        <Card className={classes.root}>
+          <CardActionArea className={classes.cardArea}>
+            <a href={props.project.link ? props.project.link : `#${props.project.name}`} target={ props.project.link ? '_blank' : '' } rel="noopener noreferrer">          
+              <CardMedia
+                alt={props.project.name}
+                className={classes.cardMedia}
+                component="img"
+                image={props.project.img}
+                title={props.project.name}
+              />
+              <CardContent className={classes.cardContent}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {props.project.name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {props.project.summary}
+                </Typography>
+              </CardContent>
+            </a>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              Share
+            </Button>
+            <Button size="small" color="primary">
+              Learn More
+            </Button>
+          </CardActions>
+        </Card>
     </Grid>
   );
 };
