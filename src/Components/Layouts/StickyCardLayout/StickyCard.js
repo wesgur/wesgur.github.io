@@ -1,10 +1,10 @@
-// import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import axios from 'axios';
+import moment from 'moment';
 
 import styles from './styles.module.scss';
 
-import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -22,14 +22,6 @@ import { Timeline, TimelineEvent } from 'react-event-timeline';
 import { Github, Linkedin, Stackoverflow } from '@icons-pack/react-simple-icons';
 
 
-const initialTimeline = [
-    {
-        "title": "Title",
-        "time": "2020-02-02 02:24 PM",
-        "content" : "Hello world"
-    }
-]
-// const initialTimeline = [];
 const useStyles = makeStyles((theme) => ({
     root: {
         [theme.breakpoints.down("md")] : {
@@ -72,11 +64,23 @@ export const StickyCard = (props) => {
     const [timeline, setTimeline] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.API_URL}/events`)
-            .then(res => {
-                setTimeline(res);
-            });        
-    }, [timeline]);
+       fetchRecentActivities()
+    }, []);
+
+    const fetchRecentActivities = () => {
+        axios.get(`${process.env.REACT_APP_API_URL}/events`, 
+            { headers: {
+                "Access-Control-Allow-Origin": "*",
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }            
+        }).then(res => {
+            if (timeline !== res.data) {
+                console.log(timeline !== res.data)
+                setTimeline(res.data);
+            }
+        });        
+    }
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -136,7 +140,8 @@ export const StickyCard = (props) => {
                                     <TimelineEvent 
                                         title={event.commit_details.repo} 
                                         icon={<Github>commit</Github>}
-                                        createdAt={event.commit_details.date}>
+                                        createdAt={ moment(new Date(event.commit_details.date)).fromNow() }
+                                        key={i}>                                        
                                         { event.commit_details.message }
                                     </TimelineEvent>
                                 )) }
