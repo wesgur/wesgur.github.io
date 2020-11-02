@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     '& h4' : {
       textAlign: 'center',
-      marginBottom: '2rem',
+      marginBottom: '1rem',
     },
     '& p,h5' : {
       margin: 0,

@@ -1,9 +1,10 @@
-// import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
+import axios from 'axios';
+import moment from 'moment';
 
 import styles from './styles.module.scss';
 
-import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -21,14 +22,6 @@ import { Timeline, TimelineEvent } from 'react-event-timeline';
 import { Github, Linkedin, Stackoverflow } from '@icons-pack/react-simple-icons';
 
 
-// const timeline = [
-//     {
-//         "title": "Title",
-//         "time": "2020-02-02 02:24 PM",
-//         "content" : "Hello world"
-//     }
-// ]
-const initialTimeline = [];
 const useStyles = makeStyles((theme) => ({
     root: {
         [theme.breakpoints.down("md")] : {
@@ -68,7 +61,26 @@ const useStyles = makeStyles((theme) => ({
 export const StickyCard = (props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
-    const [timeline, setTimeline] = useState(initialTimeline);
+    const [timeline, setTimeline] = useState([]);
+
+    useEffect(() => {
+       fetchRecentActivities()
+    }, []);
+
+    const fetchRecentActivities = () => {
+        axios.get(`${process.env.REACT_APP_API_URL}/events`, 
+            { headers: {
+                "Access-Control-Allow-Origin": "*",
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }            
+        }).then(res => {
+            if (timeline !== res.data) {
+                console.log(timeline !== res.data)
+                setTimeline(res.data);
+            }
+        });        
+    }
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -125,28 +137,19 @@ export const StickyCard = (props) => {
                         timeline.length > 0 ? (
                             <Timeline>
                                 { timeline.map((event, i) => (
-                                    <TimelineEvent title={event.title} createdAt={event.time}>
-                                        { event.content }
+                                    <TimelineEvent 
+                                        title={event.commit_details.repo} 
+                                        icon={<Github>commit</Github>}
+                                        createdAt={ moment(new Date(event.commit_details.date)).fromNow() }
+                                        key={i}>                                        
+                                        { event.commit_details.message }
                                     </TimelineEvent>
                                 )) }
                             </Timeline>
                         ) : (
-                            <p> Timeline isn't available at this moment. </p>
+                            <p> There is nothing to show in timeline </p>
                         )
                     }
-                {/* <Timeline>
-                    <TimelineEvent title="John Doe sent a SMS"
-                                createdAt="2016-09-12 10:06 PM">
-                        I received the payment for $543. Should be shipping the item within a couple of hours.
-                    </TimelineEvent>
-                    <TimelineEvent
-                        title="You sent an email to John Doe"
-                        createdAt="2016-09-11 09:06 AM">
-                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-                            gentle reminder if you are on track already!
-                    </TimelineEvent>
-                </Timeline> */}
                 </CardContent>
             </Collapse>
             </Card>
