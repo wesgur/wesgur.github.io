@@ -55,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
         maxHeight: '20em',
         overflow: 'scroll',
         borderTop: 'solid 1px rgba(0,0,0,0.15)',
+    },    
+    timelineHash: {
+        color: '#26abff',
     }
   }));
 
@@ -62,6 +65,11 @@ export const StickyCard = (props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
     const [timeline, setTimeline] = useState([]);
+
+    const timelineContentStyle = {
+        margin: "5px 0 0 0",
+        padding: "5px",
+    };
 
     useEffect(() => {
        fetchRecentActivities()
@@ -138,11 +146,15 @@ export const StickyCard = (props) => {
                             <Timeline>
                                 { timeline.map((event, i) => (
                                     <TimelineEvent 
-                                        title={event.commit_details.repo} 
+                                        title={<a href={event.commit_details.repo_url}> {event.commit_details.repo} </a>} 
                                         icon={<Github>commit</Github>}
                                         createdAt={ moment(new Date(event.commit_details.date)).fromNow() }
-                                        key={i}>                                        
-                                        { event.commit_details.message }
+                                        key={i}
+                                        contentStyle={timelineContentStyle}>                                        
+                                        <a href={event.commit_details.url}
+                                            className={classes.timelineHash}> 
+                                            { event.commit_hash.substring(0, 7) } 
+                                        </a> { FilterMessage(event.commit_details.message) }
                                     </TimelineEvent>
                                 )) }
                             </Timeline>
@@ -156,3 +168,12 @@ export const StickyCard = (props) => {
         </div>
     );    
 };
+
+const FilterMessage = (message) => {
+    if (typeof message === "string" && message.includes("deploy:")) {
+        let s = message.split(":");
+        message = `deploy: ${s[1].trim().substring(0,7)}`
+    }
+
+    return message;
+}
