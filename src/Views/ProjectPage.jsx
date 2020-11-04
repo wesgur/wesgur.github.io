@@ -17,7 +17,7 @@ import { PageTitle } from '../Components/Page';
 const projects = [ 
   {
       "name" : "Openvpn-ec2",
-      "summary" : "CLI application to deploy configured OpenVPN server on cloud. Currently supports AWS EC2 on any regions. OpenVPN certifiacte is generated and can be downloaded through the app.",
+      "summary" : "CLI application to deploy configured OpenVPN server on cloud. Currently supports AWS EC2 on any regions. OpenVPN certificate is generated and can be downloaded through the app.",
       "descriptions" : [
           "Developed with Golang urfave/cli framework along with AWS SDK",            
           "Supports cross platform (Mac/Linux)",
@@ -32,7 +32,7 @@ const projects = [
   },
   {
       "name" : "Personal Website",
-      "summary" : "Personal website built with React and Material UI. Application is deployed to Github Pages.",
+      "summary" : "Personal website built with React and Material UI. Application is deployed to Github Pages. Github API integration to fetch recent activities and used Redis to cache activities.",
       "descriptions" : [
           "Developed using React ",
           "Docker setup for development environment",

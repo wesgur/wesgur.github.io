@@ -83,10 +83,7 @@ export const StickyCard = (props) => {
                 'Content-Type': 'application/json',
             }            
         }).then(res => {
-            if (timeline !== res.data) {
-                console.log(timeline !== res.data)
-                setTimeline(res.data);
-            }
+            setTimeline(res.data);
         });        
     }
 
