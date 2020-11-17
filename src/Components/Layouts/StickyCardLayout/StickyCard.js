@@ -195,7 +195,7 @@ export const StickyCard = (props) => {
                                 </Timeline>
                             ) : (
                                 <div className={classes.emptyTimeline}>
-                                    <p> There has not been any recenty activities. Please try again later. </p>
+                                    <p> Please wait while server is being prepared. Server is taking some time too fetch the data. </p>
                                 </div>                                
                             )
                         }
