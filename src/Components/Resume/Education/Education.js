@@ -3,6 +3,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
+import Subheaders from '../Subheaders';
+
 const education = [
     {
         "school": "University of Toronto, St.Geroge",
@@ -23,7 +25,7 @@ const education = [
 const useStyles = makeStyles((theme) => ({
     education: {
         width: '100%',
-        marginBottom: '1rem'
+        margin: '1rem 0'
     },
     timeline: {
         float: 'right',
@@ -37,7 +39,7 @@ const Education = (props) => {
     return ( 
         <Grid container spacing={0}>
             <Grid item xs={12} >
-                <h4> Education </h4>          
+                <Subheaders> Education </Subheaders>          
             </Grid>
 
             {

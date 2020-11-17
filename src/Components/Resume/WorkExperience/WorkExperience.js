@@ -2,6 +2,7 @@ import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import Subheaders from '../Subheaders';
 
 const experiences = [
     {
@@ -26,7 +27,7 @@ const experiences = [
         "timeline": "Apr. 2014 - Sept. 2014",
         "description": [
             "Developed RESTful APIs with Spring Framework serving hybrid mobile applications.",
-            "Wrote unit and integration testing for APIs."
+            "Wrote unit and integration tests with JUnit."
         ]
     }
 ];
@@ -34,9 +35,13 @@ const experiences = [
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
+        margin: '1em 0'
     },
     timeline: {
         float: 'right',
+    },
+    description: {
+        marginTop: '1em'
     },
   }));
 
@@ -44,7 +49,9 @@ const WorkExperience = (props) => {
     return (
         <Grid container spacing={0}>
             <Grid item xs={12} >
-                <h4> Work Experience </h4>          
+                <Subheaders>
+                    Work Experience
+                </Subheaders>
             </Grid>
 
             { experiences.map((experience, i) => ( <Experience experience={experience} key={i}/>)) }            
@@ -70,7 +77,7 @@ const Experience = (props) => {
                 </Grid>        
             </Grid>
             <Grid item xs={12}>
-                <ul>
+                <ul className={classes.description}>
                     { experience.description && experience.description.map((description, i) => (
                         <li key={i}>
                             <p> { description } </p>        

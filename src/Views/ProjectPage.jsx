@@ -10,8 +10,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import { HashLink } from 'react-router-hash-link';
-
 import { PageTitle } from '../Components/Page';
 
 const projects = [ 
@@ -39,14 +37,14 @@ const projects = [
           "CI/CD setup with Github Actions",
           "Automatic deployment to Github Pages"
       ],
-      "img" : "screenshots/homepage_dark.png",
+      "img" : "screenshots/homepage.png",
       "progress" : "April 2020 - Ongoing",
       "tech_stack" : [ "react", "js", "html", "scss", "css", "github", "docker" ],
-      "link" : "",
+      "link" : "https://www.wesgur.com",
       "repository" : "https://github.com/wesgur/wesgur.github.io",
   },
   {
-      "name" : "Perfect Pitch",
+      "name" : "Perfect Pitch (DSCIL)",
       "summary" : "Responsive web application solving music licensing problems. Work done in a team of 2 as a part of software development and start up course in University of Toronto.",
       "descriptions" : [
           "Developed with React",
@@ -82,33 +80,48 @@ const projects = [
       "repository" : "https://github.com/csc302-fall-2019/proj-Team4",
   },
   {
-      "name" : "Youtube Music Metadata parser",
-      "summary" : "A web application designed to resolve music metadata from youtube links. This project was developed targeting users who requires metadata for sound files.",
-      "descriptions" : [
-          "Service developed with Python Flask",
-          "Web crawling with Beautiful Soup library",
-          "jQuery used for DOM manipulation",
-          "Deployed on AWS EC2 instance",
-      ],
-      "img" : "screenshots/youtube-parser.png",
-      "progress" : "Jan 2018 - Discontinued",
-      "tech_stack" : [ "python", "flask", "html", "css", "js", "jquery", "aws" ],
-      "link" : "",
-      "repository" : "https://github.com/wesgur/youtube-music-metadata-parser",
+    "name" : "Youtube Music Metadata Parser",
+    "summary" : "A web application designed to resolve music metadata from youtube links. This project was developed targeting users who requires metadata for sound files.",
+    "descriptions" : [
+        "Service developed with Python Flask",
+        "Web crawling with Beautiful Soup library",
+        "jQuery used for DOM manipulation",
+        "Deployed on AWS EC2 instance",
+    ],
+    "img" : "screenshots/youtube-parser.png",
+    "progress" : "Jan 2018 - Discontinued",
+    "tech_stack" : [ "python", "flask", "html", "css", "js", "jquery", "aws" ],
+    "link" : "",
+    "repository" : "https://github.com/wesgur/youtube-music-metadata-parser",
   },
+  {
+    "name" : "English On The Go (Schoool)",
+    "summary": "Online mobile platform to both learn and teact English through user's own native language. This application was initially developed in a team of three developers. Developed server in Node.js and Express. This project is now continued by a different team.",
+    "description" : [
+      "Maintained and managed supporting infrastructure and deployed services",
+      "Developed Restful APIs in Node.js and Express to support mobile platform",
+      "Design MySQL database schemas"
+    ],
+    "img" : "screenshots/english-on-the-go.png",
+    "progress" : "Jan 2015 - Nov 2015",
+    "tech_stack" : [],
+    "link" : "https://www.schoool.me/",
+    "repository" : ""
+  }
 ]
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("md")] : {
+    [theme.breakpoints.down("lg")] : {
       maxWidth: '100%',
     },
-    [theme.breakpoints.up("md")] : {
-      maxWidth: 345,
+    [theme.breakpoints.up("lg")] : {
+      maxWidth: 340,
     },    
     marginBottom: '1em',
     border: 'solid 1px rgba(0,0,0,0.25)',
     boxShadow: 'none !important',        
+    height: 'fit-content'
   },
   cardArea: {
     '& a:hover':{
@@ -121,13 +134,17 @@ const useStyles = makeStyles((theme) => ({
     },    
   },
   cardMedia: {
-    [theme.breakpoints.down("md")] : {
-      height: 200,
+    [theme.breakpoints.down("lg")] : {
+      height: 250,
     },
-    [theme.breakpoints.up("md")] : {
+    [theme.breakpoints.up("lg")] : {
       height: 160,
     },
-  }  
+  },
+  grid: {
+    display: 'flex',
+    justifyContent: 'center',
+  }
 }));
 
 const ProjectPage = (props) => (
@@ -152,7 +169,7 @@ const ProjectItem = (props) => {
   const classes = useStyles();
 
   return (
-    <Grid item md={6}>      
+    <Grid item lg={6} className={classes.grid}>      
         <Card className={classes.root}>
           <CardActionArea className={classes.cardArea}>
             <a href={props.project.link ? props.project.link : `#${props.project.name}`} target={ props.project.link ? '_blank' : '' } rel="noopener noreferrer">          
@@ -174,10 +191,14 @@ const ProjectItem = (props) => {
             </a>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" disabled>
               Share
             </Button>
-            <Button size="small" color="primary">
+            <Button 
+              size="small" 
+              color="primary" 
+              disabled={props.project.link ? false : true}
+              target="_blank" href={props.project.link ? props.project.link : '#'}>
               Learn More
             </Button>
           </CardActions>
