@@ -1,9 +1,8 @@
 .sticky-card {
     align-self: flex-start;
-    border: 1px;
     position: sticky;
     top: 5em;
-    z-index: 1020;
+    z-index: 1020;    
 }
 
 .profile {
@@ -17,7 +16,8 @@
     border: 1px;
     position: sticky;
     margin-top: 0.5em;
-    top: 17.5em;  
+    // top: 17.5em;  
+    top: 22em;
     z-index: 1020;
 
     p {
@@ -32,7 +32,8 @@
     border: 1px;
     position: sticky;
     margin-top: 0.5em;
-    top: 37.5em;   
+    // top: 37.5em;   
+    top: 42em;   
     z-index: 1020;
 
     p {

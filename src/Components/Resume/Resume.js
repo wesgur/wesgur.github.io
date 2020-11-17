@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
 
 import { Education } from './Education';
 import WorkExperience from './WorkExperience/WorkExperience';
@@ -29,8 +30,12 @@ const Resume = (props) => {
   return (
     <div className={classes.root}>
       <WorkExperience/>
+      
+      <Divider variant="middle"/>
 
       <Education/>
+
+      <Divider variant="middle"/>
 
       <Activity/>
 
