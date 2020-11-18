@@ -3,11 +3,18 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { Divider, makeStyles } from '@material-ui/core';
-import styles from './styles.module.scss';
 
 const useStyles = makeStyles((theme) => ({
     divider: {
         marginBottom: '1em',
+    },
+    title: {
+        fontFamily: "'Roboto', 'Gerogia'",
+        fontWeight: "bold",
+        fontSize: "24px",
+        letterSpacing: "1px",
+        textTransform: "uppercase",
+        marginBottom: '0.5em'
     }
 }));
 
@@ -16,7 +23,7 @@ const PageTitle = (props) => {
 
     return (
         <div>
-            <h3 className={classNames(styles.title)}> 
+            <h3 className={classNames(classes.title)}> 
                 { props.title } 
             </h3>
 

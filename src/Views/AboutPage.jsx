@@ -27,8 +27,6 @@ const useStyles = makeStyles((theme) => ({
 const AboutPage = (props) => {
     const classes = useStyles();
 
-    const [previous, setPrevious] = useState(0);
-
     return ( 
         <section>
           <div className={classes.root}>

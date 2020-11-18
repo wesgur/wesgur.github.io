@@ -9,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import { PageTitle } from '../Components/Page';
 
@@ -27,6 +28,7 @@ const projects = [
       "link" : "",      
       "repository" : "https://github.com/wesgur/openvpn-ec2",
       "sandbox" : "",
+      "private" : true
   },
   {
       "name" : "Personal Website",
@@ -42,6 +44,7 @@ const projects = [
       "tech_stack" : [ "react", "js", "html", "scss", "css", "github", "docker" ],
       "link" : "https://www.wesgur.com",
       "repository" : "https://github.com/wesgur/wesgur.github.io",
+      "private" : false
   },
   {
       "name" : "Perfect Pitch (DSCIL)",
@@ -60,6 +63,7 @@ const projects = [
       "tech_stack" : [ "react", "html", "css", "js", "nodejs", "webpack", "mongo", "heroku", "github", "docker" ],
       "link" : "https://perfect-pitch-web.herokuapp.com/",
       "repository" : "https://github.com/dcsil/perfect-pitch",
+      "private" : true
   },
   {
       "name" : "Cancer Care Ontario E-Health Application",
@@ -78,6 +82,7 @@ const projects = [
       "tech_stack" : [ "react", "redux", "html", "css", "js", "nodejs", "mongo", "heroku", "travis", "elastic", "docker" ],
       "link" : "",
       "repository" : "https://github.com/csc302-fall-2019/proj-Team4",
+      "private" : true
   },
   {
     "name" : "Youtube Music Metadata Parser",
@@ -93,10 +98,11 @@ const projects = [
     "tech_stack" : [ "python", "flask", "html", "css", "js", "jquery", "aws" ],
     "link" : "",
     "repository" : "https://github.com/wesgur/youtube-music-metadata-parser",
+    "private" : true
   },
   {
     "name" : "English On The Go (Schoool)",
-    "summary": "Online mobile platform to both learn and teact English through user's own native language. This application was initially developed in a team of three developers. Developed server in Node.js and Express. This project is now continued by a different team.",
+    "summary": "Online mobile platform to both learn and teach English through user's own native language. This application was initially developed in a team of three developers. Developed server in Node.js and Express. This project is now continued by a different team.",
     "description" : [
       "Maintained and managed supporting infrastructure and deployed services",
       "Developed Restful APIs in Node.js and Express to support mobile platform",
@@ -106,7 +112,8 @@ const projects = [
     "progress" : "Jan 2015 - Nov 2015",
     "tech_stack" : [],
     "link" : "https://www.schoool.me/",
-    "repository" : ""
+    "repository" : "",
+    "private" : true
   }
 ]
 
@@ -200,6 +207,15 @@ const ProjectItem = (props) => {
               disabled={props.project.link ? false : true}
               target="_blank" href={props.project.link ? props.project.link : '#'}>
               Learn More
+            </Button>
+            <Button
+              size="small"
+              color="primary"
+              disabled={props.project.repository && !props.project.private ? false: true}
+              target="_blank" href={props.project.repository ? props.project.repository : '#'}>
+                <div style={{ "display" : "flex", "justifyContent" : "center", "alignItems" : "center" }}>
+                  Code <GitHubIcon style={{ "width": '14px', "height": '14px', marginLeft: '5px' }}/> 
+                </div>
             </Button>
           </CardActions>
         </Card>
