@@ -19,13 +19,16 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Roboto",
         textAlign: "center",
         margin: "2em 3em",    
-        height: "fit-content"
+        height: "fit-content",
+        [theme.breakpoints.down("sm")] : {
+            margin: 0
+        }
     },
     flexBox: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',    
-        height: "100%"    
+        height: "400px"    
     },
     skillsGridContainer : {
         marginTop: '2em',
@@ -39,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
+        margin: 'auto',
         '& > h4': {
             marginTop: '1em',
             marginBottom: '0',
