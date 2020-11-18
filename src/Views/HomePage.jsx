@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',    
-        height: "100%"    
+        height: "400px"    
     },
     skillsGridContainer : {
         marginTop: '2em',
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
+        margin: 'auto',
         '& > h4': {
             marginTop: '1em',
             marginBottom: '0',

@@ -6,7 +6,10 @@ const useStyles = makeStyles((theme) => ({
     root : { },
     row : {
         minHeight: '400px',
-        padding: '2em 2em',
+        padding: '2em',
+        [theme.breakpoints.down("sm")] : {
+            padding: '1em',
+        }
     },
     divider: {
         marginTop: '1em',
