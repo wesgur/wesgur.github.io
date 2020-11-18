@@ -67,7 +67,7 @@ const projects = [
   },
   {
       "name" : "Cancer Care Ontario E-Health Application",
-      "summary" : "A web application developed for a project course in University of Toronto. The project was developed in collaboration of Cancer Care Ontario to increase efficienccy of data management between hospital departments.",
+      "summary" : "A web application developed for a project course in University of Toronto. The project was developed in collaboration of Cancer Care Ontario to increase efficiency of data management between hospital departments.",
       "descriptions" : [
           "Developed with React and Redux",
           "Restful API developed with Node.js and Express",

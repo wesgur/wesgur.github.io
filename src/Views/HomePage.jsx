@@ -19,7 +19,10 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Roboto",
         textAlign: "center",
         margin: "2em 3em",    
-        height: "fit-content"
+        height: "fit-content",
+        [theme.breakpoints.down("sm")] : {
+            margin: 0
+        }
     },
     flexBox: {
         display: 'flex',
