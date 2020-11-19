@@ -64,16 +64,16 @@ const HomePage = () => {
         <div className={classes.root}>
             <PageRow>
                 <div className={classes.flexBox}>
-                    <p className={classes.intro}> Hello! My name is Dong Hyuk (Johnny) Jin, and I'm a Software Developer based @Toronto, Canada </p>
+                    <p className={classes.intro}> Hello! My name is Dong Hyuk (Johnny) Jin, and I'm a Software Developer based in @Toronto, Canada </p>
                 </div>                                    
             </PageRow>
 
             <PageRow>
                 <PageRowHeader> About </PageRowHeader>
                 
-                <p> I recently graduated from University of Toronto with Honours Bachelors of Science in Computer Science on May 2020. </p>
+                <p> I recently graduated from the University of Toronto with Honours Bachelors of Science in Computer Science in May 2020. </p>
 
-                <p> Outside of work, I enjoy scheming through open source projects seeking for new technologies and contributing to stackoverflow. </p>
+                <p> Outside of work, I enjoy scheming through open source projects seeking out new technologies and contributing to StackOverflow. </p>
 
                 <Grid container spacing={3}>
                     <Grid item md={6}>
