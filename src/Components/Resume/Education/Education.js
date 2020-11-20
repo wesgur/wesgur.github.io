@@ -2,8 +2,7 @@ import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-
-import Subheaders from '../Subheaders';
+import { MdPlace } from 'react-icons/md'
 
 const education = [
     {
@@ -27,9 +26,17 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: '1rem 0'
     },
+    location: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',        
+        '& > svg': {
+            marginRight: '0.3em',
+        }
+    },
     timeline: {
         float: 'right',
-    },
+    },    
 }));
 
 //TODO: Add relevant courses
@@ -38,10 +45,6 @@ const Education = (props) => {
 
     return ( 
         <Grid container spacing={0}>
-            <Grid item xs={12} >
-                <Subheaders> Education </Subheaders>          
-            </Grid>
-
             {
                 education.map((e, i) => {                    
                     return (
@@ -50,8 +53,8 @@ const Education = (props) => {
                                 <h5> {e.major} @<a href={e.schoolLink}>{e.school}</a></h5>
                             </Grid>
                             <Grid container direction="row">
-                                <Grid item xs={6}>
-                                    <p> {e.location} </p>
+                                <Grid item xs={6} className={classes.location}>
+                                    <MdPlace color="#000"/> <p> {e.location} </p>
                                 </Grid>
                                 <Grid item xs={6}>
                                     <p className={classes.timeline}> {e.timeline} </p>
