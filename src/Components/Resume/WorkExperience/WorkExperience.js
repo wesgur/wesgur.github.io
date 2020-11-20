@@ -2,7 +2,7 @@ import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Subheaders from '../Subheaders';
+import { MdPlace } from 'react-icons/md'
 
 const experiences = [
     {
@@ -15,8 +15,8 @@ const experiences = [
             "Build AWS infrastructure from ground up to achieve zero downtime upgrade and enable remote deployment for containerized services.",
             "Enable private dependency management in Go before modules were introduced.",
             "Implement realtime notification services using sockets and long polling.",
-            "Reduce build time and CI/CD pipeline with Docker layer caching.",
-            "Participated in the design and implementation of a software defined networking system."
+            "Reduce build time for CI/CD pipeline with Docker layer caching.",
+            "Participated in the design and implementation of software defined networking system."
         ]
     },
     {
@@ -43,17 +43,19 @@ const useStyles = makeStyles((theme) => ({
     description: {
         marginTop: '1em'
     },
+    location: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',        
+        '& > svg': {
+            marginRight: '0.3em',
+        }
+    },
   }));
 
 const WorkExperience = (props) => {
     return (
         <Grid container spacing={0}>
-            <Grid item xs={12} >
-                <Subheaders>
-                    Work Experience
-                </Subheaders>
-            </Grid>
-
             { experiences.map((experience, i) => ( <Experience experience={experience} key={i}/>)) }            
         </Grid>
     );
@@ -69,8 +71,8 @@ const Experience = (props) => {
                 <h5 className={classes.position}> {experience.position} @<a href={experience.companyLink} target="_blank" rel="noopener noreferrer">{experience.companyName} </a> </h5>            
             </Grid>
             <Grid container direction="row">
-                <Grid item xs={6}>
-                    <p> { experience.companyLocation } </p> 
+                <Grid item xs={6} className={classes.location}>
+                    <MdPlace color='#000'/> <p> { experience.companyLocation } </p> 
                 </Grid>
                 <Grid item xs={6}>
                     <p className={classes.timeline}> { experience.timeline } </p>        
