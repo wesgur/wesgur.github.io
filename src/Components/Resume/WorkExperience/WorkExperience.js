@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 const WorkExperience = (props) => {
     return (
         <Grid container spacing={0}>
-            { experiences.map((experience, i) => ( <Experience experience={experience} key={i}/>)) }            
+            { props.experiences.map((experience, i) => ( <Experience experience={experience} key={i}/>)) }            
         </Grid>
     );
 };
