@@ -2,10 +2,13 @@
     margin: 1rem 0;
     align-content: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
 }
 
 .items {
-    margin: 0 0.4rem;
-    font-size: 1.05rem;
+    margin: 0 0.6rem;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

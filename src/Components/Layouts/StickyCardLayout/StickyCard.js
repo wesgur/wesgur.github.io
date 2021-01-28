@@ -1,9 +1,10 @@
-// import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
+import axios from 'axios';
+import moment from 'moment';
 
 import styles from './styles.module.scss';
 
-import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -13,30 +14,22 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Contacts, Email, ExpandMore, Language } from '@material-ui/icons'
 import { Timeline, TimelineEvent } from 'react-event-timeline';
 
 import { Github, Linkedin, Stackoverflow } from '@icons-pack/react-simple-icons';
 
-
-// const timeline = [
-//     {
-//         "title": "Title",
-//         "time": "2020-02-02 02:24 PM",
-//         "content" : "Hello world"
-//     }
-// ]
-const initialTimeline = [];
 const useStyles = makeStyles((theme) => ({
     root: {
-        [theme.breakpoints.down("md")] : {
+        [theme.breakpoints.down("lg")] : {
             maxWidth: '100%',
         },
-        [theme.breakpoints.up("md")] : {
+        [theme.breakpoints.up("lg")] : {
             maxWidth: 345,
         },
+        backgroundColor: '#F5F8F9',
+        border: 'solid 1px #DBE1E5'
     },
     media: {
       height: 0,
@@ -52,8 +45,15 @@ const useStyles = makeStyles((theme) => ({
     expandOpen: {
       transform: 'rotate(180deg)',
     },
+    emptyTimeline: {
+        textAlign: 'center',
+        height: '20em',
+        margin: 'auto',
+    },
     avatar: {
       backgroundColor: red[500],
+      height: "60px",
+      width: "60px"
     },
     iconButton: {
         fontSize: 0
@@ -62,13 +62,58 @@ const useStyles = makeStyles((theme) => ({
         maxHeight: '20em',
         overflow: 'scroll',
         borderTop: 'solid 1px rgba(0,0,0,0.15)',
+    },    
+    timelineHash: {
+        color: '#26abff',
+    },
+    actions: {
+        borderTop: 'solid 1px #DBE1E5',
+    },
+    cardContent:{
+        fontSize: '14px',
+        padding: '0 1em 0.5em 1em'
+    },
+    cardContentItem: {
+        margin: '0.5em 0',
+        "& > svg" : {
+            marginRight: '0.5em'
+        }
     }
+
   }));
 
 export const StickyCard = (props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
-    const [timeline, setTimeline] = useState(initialTimeline);
+    const [timeline, setTimeline] = useState([]);
+
+    const timelineContentStyle = {
+        margin: "5px 0 0 0",
+        padding: "5px",
+        backgroundColor: "#F5F8F9",
+        boxShadow: "none",
+        lineHeight: "140%",
+    };
+
+    const timelineBubbleIconStyle = {                
+        border: "solid 2px #26abff"                        
+    }
+
+    useEffect(() => {
+       fetchRecentActivities()
+    }, []);
+
+    const fetchRecentActivities = () => {
+        axios.get(`${process.env.REACT_APP_API_URL}/events`, 
+            { headers: {
+                "Access-Control-Allow-Origin": "*",
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }            
+        }).then(res => {
+            setTimeline(res.data);
+        });        
+    }
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -78,78 +123,94 @@ export const StickyCard = (props) => {
     return (
         <div className={classNames(styles['sticky-card'])}>
             <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        J
-                    </Avatar>
-                }
-                title="Dong Hyuk Jin"
-                subheader="Johnny"
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Software developer with 1+ work experience. 
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="Github" className={classes.iconButton}>
-                    <a href="https://www.github.com/wesgur" target="_blank" rel="noopener noreferrer">
-                        <Github/>
-                    </a>                    
-                </IconButton>
-                <IconButton aria-label="LinkedIn" className={classes.iconButton}>
-                    <a href="https://www.linkedin.com/in/dong-hyuk-johnny-jin-76a06aaa/" target="_blank" rel="noopener noreferrer">
-                        <Linkedin/>
-                    </a>
-                </IconButton>
-                <IconButton aria-label="Stackoverflow" className={classes.iconButton}>
-                    <a href="https://stackoverflow.com/users/3639630/wesgur" target="_blank" rel="noopener noreferrer">
-                        <Stackoverflow/>
-                    </a>
-                </IconButton>
-                <IconButton
-                    className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded,
-                    })}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    >
-                    <ExpandMoreIcon />
-                </IconButton>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit className={classes.collapsible}>
-                <CardContent>
-                    {
-                        timeline.length > 0 ? (
-                            <Timeline>
-                                { timeline.map((event, i) => (
-                                    <TimelineEvent title={event.title} createdAt={event.time}>
-                                        { event.content }
-                                    </TimelineEvent>
-                                )) }
-                            </Timeline>
-                        ) : (
-                            <p> Timeline isn't available at this moment. </p>
-                        )
+                <CardHeader
+                    avatar={
+                        <Avatar className={classes.avatar} src="/img/profile.png">
+                        </Avatar>
                     }
-                {/* <Timeline>
-                    <TimelineEvent title="John Doe sent a SMS"
-                                createdAt="2016-09-12 10:06 PM">
-                        I received the payment for $543. Should be shipping the item within a couple of hours.
-                    </TimelineEvent>
-                    <TimelineEvent
-                        title="You sent an email to John Doe"
-                        createdAt="2016-09-11 09:06 AM">
-                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-                            gentle reminder if you are on track already!
-                    </TimelineEvent>
-                </Timeline> */}
+                    title="Dong Hyuk Jin"
+                    titleTypographyProps={{variant:'subtitle1'}}
+                    subheader="Johnny"
+                    subheaderTypographyProps={{variant:'subtitle2'}}
+                />
+                <CardContent className={classes.cardContent}>
+                    <div className={classes.cardContentItem}>
+                        <Email/> 
+                        <a href="mailto:wesgur@gmail.com">wesgur@gmail.com </a>
+                    </div>                    
+                    <div className={classes.cardContentItem}>
+                        <Contacts/>+1 647 901 5355
+                    </div>
+                    <div className={classes.cardContentItem}>
+                        <Language/>
+                        <a href="https://www.wesgur.com">https://www.wesgur.com </a>
+                    </div>                     
                 </CardContent>
-            </Collapse>
+                <CardActions className={classes.actions} disableSpacing>
+                    <IconButton aria-label="Github" className={classes.iconButton}>
+                        <a href="https://www.github.com/wesgur" target="_blank" rel="noopener noreferrer">
+                            <Github/>
+                        </a>                    
+                    </IconButton>
+                    <IconButton aria-label="LinkedIn" className={classes.iconButton}>
+                        <a href="https://www.linkedin.com/in/dong-hyuk-johnny-jin-76a06aaa/" target="_blank" rel="noopener noreferrer">
+                            <Linkedin/>
+                        </a>
+                    </IconButton>
+                    <IconButton aria-label="Stackoverflow" className={classes.iconButton}>
+                        <a href="https://stackoverflow.com/users/3639630/wesgur" target="_blank" rel="noopener noreferrer">
+                            <Stackoverflow/>
+                        </a>
+                    </IconButton>
+                    <IconButton
+                        className={clsx(classes.expand, {
+                            [classes.expandOpen]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        >
+                        <ExpandMore />
+                    </IconButton>
+                </CardActions>
+                <Collapse in={expanded} timeout="auto" unmountOnExit className={classes.collapsible}>
+                    <CardContent>
+                        {
+                            timeline.length > 0 ? (
+                                <Timeline>
+                                    { timeline.map((event, i) => (
+                                        <TimelineEvent 
+                                            title={<a href={event.commit_details.repo_url}> {event.commit_details.repo} </a>} 
+                                            icon={<Github>commit</Github>}
+                                            createdAt={ moment(new Date(event.commit_details.date)).fromNow() }
+                                            key={i}                                            
+                                            contentStyle={timelineContentStyle}
+                                            bubbleStyle={timelineBubbleIconStyle}>                                        
+                                            <a href={event.commit_details.url}
+                                                className={classes.timelineHash}> 
+                                                { event.commit_hash.substring(0, 7) } 
+                                            </a> { FilterMessage(event.commit_details.message) }
+                                        </TimelineEvent>
+                                    )) }
+                                </Timeline>
+                            ) : (
+                                <div className={classes.emptyTimeline}>
+                                    <p> Please wait while server is being prepared. Server is idle at the moment. </p>
+                                </div>                                
+                            )
+                        }
+                    </CardContent>
+                </Collapse>
             </Card>
         </div>
     );    
 };
+
+const FilterMessage = (message) => {
+    if (typeof message === "string" && message.includes("deploy:")) {
+        let s = message.split(":");
+        message = `deploy: ${s[1].trim().substring(0,7)}`
+    }
+
+    return message;
+}

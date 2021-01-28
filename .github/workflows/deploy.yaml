@@ -33,6 +33,7 @@ jobs:
         env:
           CI: false
           PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:

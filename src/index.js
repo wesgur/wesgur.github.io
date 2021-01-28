@@ -9,10 +9,10 @@ import { App } from './Components';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>,
-  document.getElementById('root')
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  , document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

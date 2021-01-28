@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
 
+import { PageRow, PageRowHeader } from '../Page';
 import { Education } from './Education';
 import WorkExperience from './WorkExperience/WorkExperience';
 import Activity from './Activity/Activity';
@@ -10,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     '& h4' : {
-      textAlign: 'center',
-      marginBottom: '2rem',
+      // textAlign: 'center',
+      marginBottom: '1rem',
     },
     '& p,h5' : {
       margin: 0,
@@ -28,13 +30,35 @@ const Resume = (props) => {
 
   return (
     <div className={classes.root}>
-      <WorkExperience/>
+      {/* <WorkExperience/>
+      
+      <Divider variant="middle"/>
 
       <Education/>
 
-      <Activity/>
+      <Divider variant="middle"/>
 
-      {/* <h4> Technology Skills </h4>   */}
+      <Activity/>       */}
+
+      <PageRow>
+        <PageRowHeader> Work Experience </PageRowHeader>
+
+        <WorkExperience/>
+      </PageRow>
+
+      <PageRow>
+        <PageRowHeader> Education </PageRowHeader>
+
+        <Education/>
+      </PageRow>
+
+      <PageRow>
+        <PageRowHeader> Activity </PageRowHeader>
+        
+        <Activity/>
+      </PageRow>
+
+      
     </div>
   );
 }
