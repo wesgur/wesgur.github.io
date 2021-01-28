@@ -1,0 +1,24 @@
+@import 'src/variables.scss';
+
+html.dark, body.dark {
+    background-color: $dark-color-secondary;
+    color: $dark-color-primary;  
+  
+    h1, h2, h3,
+    h4, h5, h6 {
+      color: $dark-color-inverse !important;
+    }
+  
+    a, p, li {
+      color: $dark-color-inverse !important;
+    }
+  
+    svg { 
+      color: $dark-color-inverse;
+    }
+  
+    a {
+      text-decoration: none;
+      border-bottom: 1px dotted $dark-color-text-accent;
+    }
+  }

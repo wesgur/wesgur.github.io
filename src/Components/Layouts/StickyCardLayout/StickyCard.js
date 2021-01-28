@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
-import axios from 'axios';
 import moment from 'moment';
-
-import styles from './styles.module.scss';
-
-import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
@@ -15,20 +11,23 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
-import { Contacts, Email, ExpandMore, Language } from '@material-ui/icons'
 import { Timeline, TimelineEvent } from 'react-event-timeline';
-
+import { Contacts, Email, ExpandMore, Language } from '@material-ui/icons'
 import { Github, Linkedin, Stackoverflow } from '@icons-pack/react-simple-icons';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
+import EventService from '../../../Service/EventService';
+import styles from './styles.module.scss';
+
+const useStyles = makeStyles((theme) => ({    
+    root: {        
         [theme.breakpoints.down("lg")] : {
             maxWidth: '100%',
         },
         [theme.breakpoints.up("lg")] : {
             maxWidth: 345,
         },
-        backgroundColor: '#F5F8F9',
+        // backgroundColor: '#F5F8F9',
+        backgroundColor: theme.color,
         border: 'solid 1px #DBE1E5'
     },
     media: {
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
         margin: 'auto',
     },
     avatar: {
-      backgroundColor: red[500],
+      backgroundColor: red[0],
       height: "60px",
       width: "60px"
     },
@@ -79,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
             marginRight: '0.5em'
         }
     }
-
   }));
 
 export const StickyCard = (props) => {
@@ -100,19 +98,23 @@ export const StickyCard = (props) => {
     }
 
     useEffect(() => {
-       fetchRecentActivities()
+       fetchRecentActivities();
     }, []);
 
-    const fetchRecentActivities = () => {
-        axios.get(`${process.env.REACT_APP_API_URL}/events`, 
-            { headers: {
-                "Access-Control-Allow-Origin": "*",
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            }            
-        }).then(res => {
-            setTimeline(res.data);
-        });        
+    // const handleScroll = () => {
+    //     if(window.scrollTop() + window.height() == document.height()) {
+    //         alert("bottom!");
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     window.addEventListener("scroll", handleScroll);        
+    // });
+
+    const fetchRecentActivities = async () => {        
+        const events = await EventService.getEvents();    
+
+        setTimeline(events);
     }
 
     const handleExpandClick = () => {

@@ -160,14 +160,6 @@ const HomePage = () => {
                     </Grid>
                 </Grid>
             </PageRow>
-
-            {/* <PageRow>
-                <PageRowHeader> Cultural Background </PageRowHeader>
-
-                <p> I lived in multiple countries from early years</p>
-
-                
-            </PageRow>             */}
         </div>
     );
 };

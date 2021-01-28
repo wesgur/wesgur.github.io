@@ -3,6 +3,9 @@
 @import 'src/variables.scss';
 @import "node_modules/bootstrap/scss/bootstrap";
 
+// Themes
+@import "src/index.dark.scss";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -37,64 +40,41 @@ html, body {
   h1, h2, h3,
   h4, h5, h6 {
     color: $color-inverse;
+    margin: 2rem 0 1rem;
+    font-family: 'Roboto', 'Roboto Condensed', Arial, Helvetica, sans-serif;
+  }
+
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    margin-top: 0;
   }
 
   a, p, li {
-    color: $color-inverse;
+    color: $color-inverse;    
   }
 
   a:hover {
     color: $color-accent;
   }
-}
-
-html.dark-mode, body.dark-mode {
-  background-color: $dark-color-secondary;
-  color: $dark-color-primary;  
-
-  h1, h2, h3,
-  h4, h5, h6 {
-    color: #fff;
-  }
-
-  a, p, li {
-    color: #fff;
-  }
 
   a {
     text-decoration: none;
-    border-bottom: 1px dotted $dark-color-text-accent;
   }
-}
+  
+  p {
+    margin: 0 0 1rem;
+    line-height: 1.7;
+  }
 
-h1, h2, h3,
-h4, h5, h6 {
-  margin: 2rem 0 1rem;
-  font-family: 'Roboto', 'Roboto Condensed', Arial, Helvetica, sans-serif;
-}
-
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
-
-ul, ol {
-  margin: 0 0 1rem;
-}
-
-li {
-  font-family: 'Roboto', 'Roboto Condensed', Arial, Helvetica, sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-p {
-  margin: 0 0 1rem;
-  line-height: 1.7;
+  ul, ol {
+    margin: 0 0 1rem;
+  }
+  
+  li {
+    font-family: 'Roboto', 'Roboto Condensed', Arial, Helvetica, sans-serif;
+  }
 }

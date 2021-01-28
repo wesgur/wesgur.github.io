@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
     },    
 }));
 
-//TODO: Add relevant courses
 const Education = (props) => {
     const classes = useStyles();
 
