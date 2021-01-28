@@ -15,8 +15,8 @@ const items = [
         "path": "/projects"        
     },
     {
-        "title": "Resume",
-        "path": "/resume"
+        "title": "Works",
+        "path": "/works"
     }
 ];
 

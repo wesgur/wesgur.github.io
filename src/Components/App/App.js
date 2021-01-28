@@ -26,7 +26,7 @@ function App() {
 							<Route exact path="/" component={ HomePage } />
 							{/* <Route path="/about" component={ AboutPage } /> */}
 							<Route path="/projects" component={ ProjectPage } />
-							<Route path="/resume" component={ ResumePage } />
+							<Route path="/works" component={ ResumePage } />
 							{/* <Route path="/experiments" component={ ExperimentPage } /> */}
 						</Switch>
 					</StickyCardLayout>				

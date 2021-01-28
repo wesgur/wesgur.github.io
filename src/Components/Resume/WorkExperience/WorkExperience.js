@@ -7,6 +7,16 @@ import { MdPlace } from 'react-icons/md'
 const experiences = [
     {
         "companyName": "Bluecat Networks",
+        "position": "Software Engineer",
+        "companyLink": "https://bluecatnetworks.com/",
+        "companyLocation": "Toronto, Canada",
+        "timeline": "Jan. 2021 - Today",
+        "description": [
+            "Develop platforms and services that deliver containerized microservices."
+        ]
+    },
+    {
+        "companyName": "Bluecat Networks",
         "position": "Software Developer Co-op",
         "companyLink": "https://bluecatnetworks.com/",
         "companyLocation": "Toronto, Canada",
@@ -56,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 const WorkExperience = (props) => {
     return (
         <Grid container spacing={0}>
-            { experiences.map((experience, i) => ( <Experience experience={experience} key={i}/>)) }            
+            { props.experiences.map((experience, i) => ( <Experience experience={experience} key={i}/>)) }            
         </Grid>
     );
 };
