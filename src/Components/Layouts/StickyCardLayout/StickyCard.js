@@ -45,10 +45,13 @@ const useStyles = makeStyles((theme) => ({
     expandOpen: {
       transform: 'rotate(180deg)',
     },
-    emptyTimeline: {
-        textAlign: 'center',
-        height: '20em',
-        margin: 'auto',
+    "empty-timeline": {
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
+        height: "17.2em",
+        margin: "auto",
     },
     avatar: {
       backgroundColor: red[500],
@@ -193,9 +196,14 @@ export const StickyCard = (props) => {
                                         </TimelineEvent>
                                     )) }
                                 </Timeline>
-                            ) : (
-                                <div className={classes.emptyTimeline}>
-                                    <p> Please wait while server is being prepared. Server is idle at the moment. </p>
+                            ) : 
+                            (
+                                <div className={classes["empty-timeline"]}>
+                                    {
+                                        timeline.length == 0 ? 
+                                            ( <p> No recent events. <br /> Come back later for updates! </p> ) :
+                                            ( <p> Loading </p> ) 
+                                    }                                    
                                 </div>                                
                             )
                         }
