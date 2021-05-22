@@ -200,7 +200,7 @@ export const StickyCard = (props) => {
                             (
                                 <div className={classes["empty-timeline"]}>
                                     {
-                                        timeline.length == 0 ? 
+                                        timeline.length === 0 ? 
                                             ( <p> No recent events. <br /> Come back later for updates! </p> ) :
                                             ( <p> Loading </p> ) 
                                     }                                    
