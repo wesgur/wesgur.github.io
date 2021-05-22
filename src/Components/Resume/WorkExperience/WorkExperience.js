@@ -4,44 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { MdPlace } from 'react-icons/md'
 
-const experiences = [
-    {
-        "companyName": "Bluecat Networks",
-        "position": "Software Engineer",
-        "companyLink": "https://bluecatnetworks.com/",
-        "companyLocation": "Toronto, Canada",
-        "timeline": "Jan. 2021 - Today",
-        "description": [
-            "Develop platforms and services that deliver containerized microservices."
-        ]
-    },
-    {
-        "companyName": "Bluecat Networks",
-        "position": "Software Developer Co-op",
-        "companyLink": "https://bluecatnetworks.com/",
-        "companyLocation": "Toronto, Canada",
-        "timeline": "Aug. 2017 - Aug. 2018",
-        "description": [
-            "Build AWS infrastructure from ground up to achieve zero downtime upgrade and enable remote deployment for containerized services.",
-            "Enable private dependency management in Go before modules were introduced.",
-            "Implement realtime notification services using sockets and long polling.",
-            "Reduce build time for CI/CD pipeline with Docker layer caching.",
-            "Participated in the design and implementation of software defined networking system."
-        ]
-    },
-    {
-        "companyName": "Mobile C&C",
-        "position": "Software Developer Intern",
-        "companyLink": "https://www.mcnc.co.kr/publishing_en/main/html/main.html",
-        "companyLocation": "Seoul, South Korea",
-        "timeline": "Apr. 2014 - Sept. 2014",
-        "description": [
-            "Developed RESTful APIs with Spring Framework serving hybrid mobile applications.",
-            "Wrote unit and integration tests with JUnit."
-        ]
-    }
-];
-
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
