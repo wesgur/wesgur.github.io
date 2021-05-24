@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
 import axios from 'axios';
 import moment from 'moment';
-
-import styles from './styles.module.scss';
 
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -82,7 +79,6 @@ const useStyles = makeStyles((theme) => ({
             marginRight: '0.5em'
         }
     }
-
   }));
 
 export const StickyCard = (props) => {
@@ -124,7 +120,7 @@ export const StickyCard = (props) => {
     };
 
     return (
-        <div className={classNames(styles['sticky-card'])}>
+        <div>
             <Card className={classes.root}>
                 <CardHeader
                     avatar={
