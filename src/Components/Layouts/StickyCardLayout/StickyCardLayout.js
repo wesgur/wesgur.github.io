@@ -13,15 +13,17 @@ const StickyCardLayout = (props) => {
     const [expanded, setLayoutExpanded] = React.useState(false);
 
     return (
-        <section className={classNames(styles["main-content"])}>
+        <section>
             <Container>
                 <Row>
                     <Col lg={8}>
                         {props.children}
                     </Col>
                     <Col lg={4}>
-                        <StickyCard setLayoutExpanded={setLayoutExpanded} />
-                        <StickyCardSecondary expanded={expanded} resumeLink={RESUME_DOWNLOAD_LINK}/>
+                        <div className={classNames(styles.sticky)}>
+                            <StickyCard setLayoutExpanded={setLayoutExpanded} />
+                            <StickyCardSecondary expanded={expanded} resumeLink={RESUME_DOWNLOAD_LINK}/>
+                        </div>
                     </Col>                            
                 </Row>
             </Container>
