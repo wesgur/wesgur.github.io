@@ -11,7 +11,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import { red } from '@material-ui/core/colors';
+import { blue } from '@material-ui/core/colors';
 import { Contacts, Email, ExpandMore, Language } from '@material-ui/icons'
 import { Timeline, TimelineEvent } from 'react-event-timeline';
 
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
     },
     avatar: {
-      backgroundColor: red[500],
+      backgroundColor: blue[50],
       height: "60px",
       width: "60px"
     },
@@ -85,6 +85,7 @@ export const StickyCard = (props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
     const [timeline, setTimeline] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const timelineContentStyle = {
         margin: "5px 0 0 0",
@@ -103,6 +104,7 @@ export const StickyCard = (props) => {
     }, []);
 
     const fetchRecentActivities = () => {
+        setLoading(true);
         axios.get(`${process.env.REACT_APP_API_URL}/events`, 
             { headers: {
                 "Access-Control-Allow-Origin": "*",
@@ -111,6 +113,7 @@ export const StickyCard = (props) => {
             }            
         }).then(res => {
             setTimeline(res.data);
+            setLoading(false);
         });        
     }
 
@@ -175,7 +178,11 @@ export const StickyCard = (props) => {
                 <Collapse in={expanded} timeout="auto" unmountOnExit className={classes.collapsible}>
                     <CardContent>
                         {
-                            timeline.length > 0 ? (
+                            loading ? (   
+                                <div className={classes["empty-timeline"]}>
+                                    <p> Loading... <br /> Should only take few seconds. &#128512; </p>
+                                </div> 
+                            ) :  timeline ? (
                                 <Timeline>
                                     { timeline.map((event, i) => (
                                         <TimelineEvent 
@@ -192,16 +199,11 @@ export const StickyCard = (props) => {
                                         </TimelineEvent>
                                     )) }
                                 </Timeline>
-                            ) : 
-                            (
+                            ) : (
                                 <div className={classes["empty-timeline"]}>
-                                    {
-                                        timeline.length === 0 ? 
-                                            ( <p> No recent events. <br /> Come back later for updates! </p> ) :
-                                            ( <p> Loading </p> ) 
-                                    }                                    
-                                </div>                                
-                            )
+                                    <p> No recent events. <br /> Come back later for updates! </p>                                   
+                                </div>   
+                            ) 
                         }
                     </CardContent>
                 </Collapse>
