@@ -1,11 +1,11 @@
-FROM node:10
+FROM node:14
 
 WORKDIR /app
 
 ADD package.json .
-ADD package-lock.json .
 
 RUN npm install
+RUN npm rebuild node-sass --force
 
 ADD . .
 
