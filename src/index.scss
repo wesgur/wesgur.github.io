@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
-@import 'src/variables.scss';
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "src/variables.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 body {
   margin: 0;

@@ -30,8 +30,7 @@ const AboutPage = (props) => {
     return ( 
         <section>
           <div className={classes.root}>
-            <PageTitle title="About Myself"/> 
-            
+            <PageTitle title="About Myself"/>             
           </div>
         </section>        
     );
