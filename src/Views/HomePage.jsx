@@ -3,6 +3,7 @@ import { makeStyles, Grid } from '@material-ui/core';
 import { School } from '@material-ui/icons';
 import { SiJavascript, SiGo, SiPython, SiAmazonaws, SiGithubactions, SiDocker, SiSwagger } from 'react-icons/si';
 import { FaDatabase } from 'react-icons/fa';
+import Flags from '../Components/Flags';
 
 
 import PageRow, { PageRowHeader } from '../Components/Page/PageRow';
@@ -64,7 +65,9 @@ const HomePage = () => {
         <div className={classes.root}>
             <PageRow>
                 <div className={classes.flexBox}>
-                    <p className={classes.intro}> Hello! My name is Dong Hyuk (Johnny) Jin, and I'm a Software Developer based in @Toronto, Canada </p>
+                    <p className={classes.intro}> 
+                        Hello! My name is Dong Hyuk (Johnny) Jin, and I'm a Software Developer based @Toronto, Canada <Flags code="ca"/>
+                    </p>
                 </div>                                    
             </PageRow>
 
@@ -88,12 +91,12 @@ const HomePage = () => {
                         <h5 style={{ fontWeight: 'bold' }}> Education </h5>
                         <div style={{ marginBottom: '1em' }}>                            
                             <h6 style={{ margin: 0 }}> <School style={{ color: '#000' }}/> BSc. in Computer Science, May 2020 </h6>
-                            <h6 style={{ margin: '0 0 0 1.8em', color: 'rgba(0,0,0,0.6)' }}> @University of Toronto </h6>
+                            <h6 style={{ margin: '0 0 0 1.8em', color: 'rgba(0,0,0,0.6)' }}> @University of Toronto <Flags code="ca"/> </h6>
                         </div>
                         
                         <div>
                             <h6 style={{ margin: 0 }}> <School style={{ color: '#000' }}/> IB Diploma, May 2013 </h6>
-                            <h6 style={{ margin: '0 0 0 1.8em', color: 'rgba(0,0,0,0.6)' }}> @International School of Manila </h6>
+                            <h6 style={{ margin: '0 0 0 1.8em', color: 'rgba(0,0,0,0.6)' }}> @International School of Manila <Flags code="ph"/> </h6>
                         </div>                        
                     </Grid>
                 </Grid>
@@ -160,14 +163,6 @@ const HomePage = () => {
                     </Grid>
                 </Grid>
             </PageRow>
-
-            {/* <PageRow>
-                <PageRowHeader> Cultural Background </PageRowHeader>
-
-                <p> I lived in multiple countries from early years</p>
-
-                
-            </PageRow>             */}
         </div>
     );
 };

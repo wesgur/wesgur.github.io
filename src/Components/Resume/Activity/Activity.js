@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { MdPlace } from 'react-icons/md'
 
+import Flags from '../../Flags';
+
 const useStyles = makeStyles((theme) => ({
     root: { },
     timeline: {
@@ -32,7 +34,7 @@ const Activity = (props) => {
                     <h5> Topographic Analyst (Sergeant) @<a href="http://www.army.mil.kr/webapp/user/indexMain.do?siteId=english">Republic of Korea Army</a></h5>
                 </Grid>
                 <Grid item xs={6} className={classes.location}>
-                    <MdPlace color="#000"/> <p> Haman, South Korea </p>
+                    <MdPlace color="#000"/> <p> Haman, South Korea <Flags code='kr'/> </p>
                 </Grid>
                 <Grid item xs={6}>
                     <p className={classes.timeline}> Dec. 2015 - Aug. 2017 </p>

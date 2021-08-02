@@ -14,6 +14,7 @@ const experiences = {
       "position": "Software Engineer",
       "companyLink": "https://bluecatnetworks.com/",
       "companyLocation": "Toronto, Canada",
+      "countryCode": "ca",
       "timeline": "Jan. 2021 - Today",
       "description": [
           "Develop platforms and services that deliver containerized microservices."
@@ -24,6 +25,7 @@ const experiences = {
       "position": "Software Developer Co-op",
       "companyLink": "https://bluecatnetworks.com/",
       "companyLocation": "Toronto, Canada",
+      "countryCode": "ca",
       "timeline": "Aug. 2017 - Aug. 2018",
       "description": [
           "Build AWS infrastructure from ground up to achieve zero downtime upgrade and enable remote deployment for containerized services.",
@@ -38,6 +40,7 @@ const experiences = {
       "position": "Software Developer Intern",
       "companyLink": "https://www.mcnc.co.kr/publishing_en/main/html/main.html",
       "companyLocation": "Seoul, South Korea",
+      "countryCode": "kr",
       "timeline": "Apr. 2014 - Sept. 2014",
       "description": [
           "Developed RESTful APIs with Spring Framework serving hybrid mobile applications.",
