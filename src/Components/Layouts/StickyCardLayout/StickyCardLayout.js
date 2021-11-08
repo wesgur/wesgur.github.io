@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Container, Col, Row } from 'react-bootstrap';
 
-import { StickyCard, StickyCardSecondary, VersionContainer } from '.';
+import { StickyCard, StickyCardSecondary } from '.';
 
 import styles from './styles.module.scss';
 
@@ -23,7 +23,6 @@ const StickyCardLayout = (props) => {
                         <div className={classNames(styles.sticky)}>
                             <StickyCard setLayoutExpanded={setLayoutExpanded} />
                             <StickyCardSecondary expanded={expanded} resumeLink={RESUME_DOWNLOAD_LINK}/>
-                            <VersionContainer />
                         </div>
                     </Col>                            
                 </Row>
