@@ -127,7 +127,7 @@ export const StickyCard = (props) => {
             <Card className={classes.root}>
                 <CardHeader
                     avatar={
-                        <Avatar className={classes.avatar} src="/img/profile.png">
+                        <Avatar className={classes.avatar} src="/img/profile.jpeg">
                         </Avatar>
                     }
                     title="Dong Hyuk Jin"
