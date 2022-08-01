@@ -9,10 +9,9 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '1em',
     },
     title: {
-        fontFamily: "'Roboto', 'Gerogia'",
+        fontFamily: "'Roboto', 'Roboto Condensed','Gerogia'",
         fontWeight: "bold",
         fontSize: "24px",
-        letterSpacing: "1px",
         textTransform: "uppercase",
         marginBottom: '0.5em'
     }
@@ -23,9 +22,9 @@ const PageTitle = (props) => {
 
     return (
         <div>
-            <h3 className={classNames(classes.title)}> 
+            <h4 className={classNames(classes.title)}> 
                 { props.title } 
-            </h3>
+            </h4>
 
             <Divider className={classes.divider}/>        
         </div>

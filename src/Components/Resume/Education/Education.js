@@ -4,12 +4,15 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { MdPlace } from 'react-icons/md'
 
+import Flags from '../../Flags';
+
 const education = [
     {
         "school": "University of Toronto, St.Geroge",
         "major": "Computer Science, Specialist",
         "schoolLink": "https://www.utoronto.ca/",
         "location": "Toronto, Canada",
+        "countryCode" : "ca",
         "timeline": "Sept. 2013 - May. 2020",        
     },
     {
@@ -17,6 +20,7 @@ const education = [
         "major": "International Baccalaureate, Diploma",
         "schoolLink": "https://www.ismanila.org/",
         "location": "Manila, Philippines",
+        "countryCode" : "ph",
         "timeline": "Nov. 2007 - May. 2013"
     }
 ];
@@ -54,7 +58,7 @@ const Education = (props) => {
                             </Grid>
                             <Grid container direction="row">
                                 <Grid item xs={6} className={classes.location}>
-                                    <MdPlace color="#000"/> <p> {e.location} </p>
+                                    <MdPlace color="#000"/> <p> {e.location} <Flags code={e.countryCode}/> </p>
                                 </Grid>
                                 <Grid item xs={6}>
                                     <p className={classes.timeline}> {e.timeline} </p>

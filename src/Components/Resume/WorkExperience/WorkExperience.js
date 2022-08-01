@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { MdPlace } from 'react-icons/md'
 
+import Flags from '../../Flags';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -44,7 +46,7 @@ const Experience = (props) => {
             </Grid>
             <Grid container direction="row">
                 <Grid item xs={6} className={classes.location}>
-                    <MdPlace color='#000'/> <p> { experience.companyLocation } </p> 
+                    <MdPlace color='#000'/> <p> { experience.companyLocation } <Flags code={experience.countryCode}/> </p> 
                 </Grid>
                 <Grid item xs={6}>
                     <p className={classes.timeline}> { experience.timeline } </p>        

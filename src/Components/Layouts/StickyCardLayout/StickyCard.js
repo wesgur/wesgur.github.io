@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
 import axios from 'axios';
 import moment from 'moment';
-
-import styles from './styles.module.scss';
 
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -14,7 +11,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import { red } from '@material-ui/core/colors';
+import { blue } from '@material-ui/core/colors';
 import { Contacts, Email, ExpandMore, Language } from '@material-ui/icons'
 import { Timeline, TimelineEvent } from 'react-event-timeline';
 
@@ -45,13 +42,16 @@ const useStyles = makeStyles((theme) => ({
     expandOpen: {
       transform: 'rotate(180deg)',
     },
-    emptyTimeline: {
-        textAlign: 'center',
-        height: '20em',
-        margin: 'auto',
+    "empty-timeline": {
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
+        height: "17.2em",
+        margin: "auto",
     },
     avatar: {
-      backgroundColor: red[500],
+      backgroundColor: blue[50],
       height: "60px",
       width: "60px"
     },
@@ -79,13 +79,13 @@ const useStyles = makeStyles((theme) => ({
             marginRight: '0.5em'
         }
     }
-
   }));
 
 export const StickyCard = (props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
     const [timeline, setTimeline] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const timelineContentStyle = {
         margin: "5px 0 0 0",
@@ -104,6 +104,7 @@ export const StickyCard = (props) => {
     }, []);
 
     const fetchRecentActivities = () => {
+        setLoading(true);
         axios.get(`${process.env.REACT_APP_API_URL}/events`, 
             { headers: {
                 "Access-Control-Allow-Origin": "*",
@@ -112,6 +113,7 @@ export const StickyCard = (props) => {
             }            
         }).then(res => {
             setTimeline(res.data);
+            setLoading(false);
         });        
     }
 
@@ -121,11 +123,11 @@ export const StickyCard = (props) => {
     };
 
     return (
-        <div className={classNames(styles['sticky-card'])}>
+        <div>
             <Card className={classes.root}>
                 <CardHeader
                     avatar={
-                        <Avatar className={classes.avatar} src="/img/profile.png">
+                        <Avatar className={classes.avatar} src="/img/profile.jpeg">
                         </Avatar>
                     }
                     title="Dong Hyuk Jin"
@@ -176,7 +178,11 @@ export const StickyCard = (props) => {
                 <Collapse in={expanded} timeout="auto" unmountOnExit className={classes.collapsible}>
                     <CardContent>
                         {
-                            timeline.length > 0 ? (
+                            loading ? (   
+                                <div className={classes["empty-timeline"]}>
+                                    <p> Loading... <br /> Should only take few seconds. &#128512; </p>
+                                </div> 
+                            ) :  timeline ? (
                                 <Timeline>
                                     { timeline.map((event, i) => (
                                         <TimelineEvent 
@@ -194,10 +200,10 @@ export const StickyCard = (props) => {
                                     )) }
                                 </Timeline>
                             ) : (
-                                <div className={classes.emptyTimeline}>
-                                    <p> Please wait while server is being prepared. Server is idle at the moment. </p>
-                                </div>                                
-                            )
+                                <div className={classes["empty-timeline"]}>
+                                    <p> No recent events. <br /> Come back later for updates! </p>                                   
+                                </div>   
+                            ) 
                         }
                     </CardContent>
                 </Collapse>

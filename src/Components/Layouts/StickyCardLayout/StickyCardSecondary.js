@@ -42,7 +42,7 @@ export const StickyCardSecondary = (props) => {
     const classes = useStyles();
 
     return ( 
-        <div className={props.expanded ? classNames(styles.expandedCard) : classNames(styles.card)}>
+        <div className={classNames(styles.card)}>
             <Card className={classes.root}>
                 <CardContent className={classes.content}>
                     <IconButton aria-label="Download" className={classes.iconButton}>
