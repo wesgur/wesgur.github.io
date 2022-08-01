@@ -4,7 +4,6 @@ import { School } from '@material-ui/icons';
 import { SiJavascript, SiGo, SiPython, SiAmazonaws, SiGithubactions, SiDocker, SiSwagger } from 'react-icons/si';
 import { FaDatabase } from 'react-icons/fa';
 
-
 import PageRow, { PageRowHeader } from '../Components/Page/PageRow';
 
 const useStyles = makeStyles((theme) => ({
@@ -134,21 +133,21 @@ const HomePage = () => {
                         <div className={classes.technology}>
                             <SiGithubactions color="#03afff" size="4em"/>
                             <h4> CI/CD </h4>
-                            <p> Github Actions, Jenkins, Travis CI </p>
+                            <p> Gitlab CI/CD, Github Actions, Jenkins </p>
                         </div>
                     </Grid>
                     <Grid item xs={6} md={4} className={classes.skillsGridItem}>
                         <div className={classes.technology}>
                             <SiDocker color="#03afff" size="4em"/>
                             <h4> DevOps </h4>
-                            <p> Docker, Kubernetes, Nomad, Consul </p>
+                            <p> Docker, Nomad, Consul, Packer, Ansible </p>
                         </div>
                     </Grid>
                     <Grid item xs={6} md={4} className={classes.skillsGridItem}>
                         <div className={classes.technology}>
                             <SiAmazonaws color="#03afff" size="4em"/>
                             <h4> Cloud </h4>
-                            <p> AWS EC2, ECS, API Gateway, Cloudformation </p>
+                            <p> AWS, GCP, Terraform </p>
                         </div>
                     </Grid>
                     <Grid item xs={6} md={4} className={classes.skillsGridItem}>
@@ -160,18 +159,8 @@ const HomePage = () => {
                     </Grid>
                 </Grid>
             </PageRow>
-
-            {/* <PageRow>
-                <PageRowHeader> Cultural Background </PageRowHeader>
-
-                <p> I lived in multiple countries from early years</p>
-
-                
-            </PageRow>             */}
         </div>
     );
 };
-
-
 
 export default HomePage;

@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 
 import { default as Navigation } from '../Navigation';
 import { Container } from '../Container';
-import { HomePage, AboutPage, ProjectPage, ResumePage } from '../../Views';
+import { HomePage, ProjectPage, ResumePage } from '../../Views';
 
 import styles from './styles.module.scss';
 import { StickyCardLayout } from "../Layouts/StickyCardLayout";
@@ -24,10 +24,8 @@ function App() {
 					<StickyCardLayout>						
 						<Switch>
 							<Route exact path="/" component={ HomePage } />
-							{/* <Route path="/about" component={ AboutPage } /> */}
 							<Route path="/projects" component={ ProjectPage } />
 							<Route path="/works" component={ ResumePage } />
-							{/* <Route path="/experiments" component={ ExperimentPage } /> */}
 						</Switch>
 					</StickyCardLayout>				
 				</Container>			

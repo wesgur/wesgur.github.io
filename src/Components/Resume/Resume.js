@@ -11,13 +11,27 @@ const experiences = {
   "works" : [
     {
       "companyName": "Bluecat Networks",
-      "position": "Software Engineer",
+      "position": "Software Engineer II",
       "companyLink": "https://bluecatnetworks.com/",
       "companyLocation": "Toronto, Canada",
-      "timeline": "Jan. 2021 - Today",
+      "timeline": "April. 2022 - Today",
       "description": [
-          "Develop platforms and services that deliver containerized microservices."
+          "Configure Debian image to support cloud platforms (AWS, Azure, GCP)",
       ]
+    },
+    {
+        "companyName": "Bluecat Networks",
+        "position": "Software Engineer",
+        "companyLink": "https://bluecatnetworks.com/",
+        "companyLocation": "Toronto, Canada",
+        "timeline": "Jan. 2021 - March. 2022",
+        "description": [
+            "Develop API to deploy custom built images in cloud using Go.",
+            "Build custom Debian 11 image to host containerized applications.",
+            "Migrate AWS cloudformation deployed AWS infrastructures to Terraform.",
+            "Design and implement manifest based CI/CD pipelines to build and release VM images.",
+            "Write daemon services that would interact with cloud management services in Go."
+        ]
     },
     {
       "companyName": "Bluecat Networks",
@@ -51,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     '& h4' : {
-      // textAlign: 'center',
       marginBottom: '1rem',
     },
     '& p,h5' : {
@@ -63,22 +76,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// TODO: Add tech skills
 const Resume = (props) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      {/* <WorkExperience/>
-      
-      <Divider variant="middle"/>
-
-      <Education/>
-
-      <Divider variant="middle"/>
-
-      <Activity/>       */}
-
       <PageRow>
         <PageRowHeader> Work Experience </PageRowHeader>
 

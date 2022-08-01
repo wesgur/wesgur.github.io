@@ -3,7 +3,7 @@ import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        textTransform: "uppercase",
+        // textTransform: "uppercase",
         fontWeight: "bold",
         marginBottom: "1em",
     },
