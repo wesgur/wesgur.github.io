@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     },
     collapsible: {
         maxHeight: '20em',
-        overflow: 'scroll',
+        "overflow-y": 'scroll',
         borderTop: 'solid 1px rgba(0,0,0,0.15)',
     },    
     timelineHash: {
