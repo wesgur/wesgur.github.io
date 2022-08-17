@@ -7,8 +7,6 @@ import { StickyCard, StickyCardSecondary } from '.';
 
 import styles from './styles.module.scss';
 
-const RESUME_DOWNLOAD_LINK = "https://www.dropbox.com/s/f4kinqwerf9soej/Resume.pdf?dl=1";
-
 const StickyCardLayout = (props) => {
     const [expanded, setLayoutExpanded] = React.useState(false);
 
@@ -22,9 +20,9 @@ const StickyCardLayout = (props) => {
                     <Col lg={4}>
                         <div className={classNames(styles.sticky)}>
                             <StickyCard setLayoutExpanded={setLayoutExpanded} />
-                            <StickyCardSecondary expanded={expanded} resumeLink={RESUME_DOWNLOAD_LINK}/>
+                            <StickyCardSecondary expanded={expanded} resumeLink={process.env.REACT_APP_RESUME_LINK}/>
                         </div>
-                    </Col>                            
+                    </Col>
                 </Row>
             </Container>
         </section>
