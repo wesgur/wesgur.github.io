@@ -34,7 +34,7 @@ jobs:
           CI: false
           PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
-          RESUME_LINK: ${{ secrets.RESUME_LINK }}
+          REACT_APP_RESUME_LINK: ${{ secrets.REACT_APP_RESUME_LINK }}
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
